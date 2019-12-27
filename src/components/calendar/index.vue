@@ -1,13 +1,17 @@
 <template>
-  <div class="calendar has-text-centered">
+  <div class="calendar">
     <calendar-table :planName="planName" />
-    <calendar-form @add-calendar="addCalendar" />
+    <div class="right-content">
+      <calendar-form @add-calendar="addCalendar" />
+      <calendar-document />
+    </div>
   </div>
 </template>
 
 <script>
 import calendarTable from "./Table";
 import calendarForm from "./Form";
+import calendarDocument from "./Document";
 
 export default {
   name: "calendar",
@@ -16,7 +20,8 @@ export default {
   }),
   components: {
     calendarTable,
-    calendarForm
+    calendarForm,
+    calendarDocument
   },
   methods: {
     addCalendar(form) {
@@ -32,5 +37,10 @@ export default {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+}
+.right-content {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
 }
 </style>

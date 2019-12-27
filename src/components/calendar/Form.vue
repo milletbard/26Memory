@@ -82,10 +82,8 @@ export default {
 
 <style lang="scss" scoped>
 .calendar-info {
-  min-width: 350px;
-  height: 100%;
   margin-left: 10px;
-  border: 0.8px solid gray;
+  min-width: 350px;
 }
 
 .calendar-info-footer {
