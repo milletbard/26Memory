@@ -1,5 +1,5 @@
 <template>
-  <section id="app" class="hero is-info  is-fullheight">
+  <section id="app" class="hero is-info is-fullheight">
     <calendar />
   </section>
 </template>
@@ -49,5 +49,9 @@ body {
       }
     }
   }
+}
+
+.box {
+  border: 0.8px solid gray;
 }
 </style>
