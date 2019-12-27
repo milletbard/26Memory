@@ -15,7 +15,7 @@
           placeholder="選擇開始時間"
         ></el-date-picker>
       </el-form-item>
-      <el-form-item label="List數(每日)">
+      <el-form-item label="每日List數">
         <el-input
           type="number"
           placeholder="1"
@@ -26,7 +26,7 @@
       <el-form-item label="List總數">
         <el-input
           type="number"
-          placeholder="30"
+          placeholder="7"
           v-model.trim="form.listTotal"
           onkeyup="value=value.replace(/[^\d]/g,'')"
         ></el-input>
