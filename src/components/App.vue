@@ -1,20 +1,26 @@
 <template>
   <div id="app" class>
-    <navbar />
+    <calendar-navbar />
+
     <transition name="el-fade-in-linear">
       <calendar />
     </transition>
+
+    <calendar-footer />
   </div>
 </template>
 
 <script>
 import Calendar from "@/components/calendar";
-import Navbar from "@/components/navbar";
+import CalendarNavbar from "@/components/navbar";
+import CalendarFooter from "@/components/footer";
+
 export default {
   name: "app",
   components: {
     Calendar,
-    Navbar
+    CalendarNavbar,
+    CalendarFooter
   }
 };
 </script>
