@@ -1,10 +1,16 @@
 <template>
   <div class="calendar">
-    <calendar-table :planName="planName" />
-    <div class="right-content">
-      <calendar-form @add-calendar="addCalendar" />
-      <calendar-document />
-    </div>
+    <el-row>
+      <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="24">
+        <calendar-table :planName="planName" />
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="24" :lg="10">
+        <div class="right-content">
+          <calendar-form @add-calendar="addCalendar" />
+          <calendar-document />
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -34,6 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 .calendar {
+  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -41,6 +48,5 @@ export default {
 .right-content {
   display: flex;
   flex-direction: column;
-  height: 500px;
 }
 </style>

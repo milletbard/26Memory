@@ -1,6 +1,6 @@
 <template>
   <div class="calendar-info box">
-    <el-form ref="form" :model="form" label-width="100px">
+    <el-form ref="form" :model="form" label-width="80px">
       <el-form-item label="計畫名稱">
         <el-input v-model="form.planName" placeholder="想個計畫名稱"></el-input>
       </el-form-item>
@@ -9,6 +9,7 @@
       </el-form-item>
       <el-form-item label="開始時間">
         <el-date-picker
+        style="width: 100%;"
           v-model="form.date"
           :picker-options="datePickerOptions"
           type="date"
@@ -80,12 +81,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.calendar-info {
-  margin-left: 10px;
-  min-width: 350px;
-}
-
+<style lang="scss" >
 .calendar-info-footer {
   float: right;
 }

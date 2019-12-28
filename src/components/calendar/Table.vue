@@ -1,6 +1,6 @@
 <template>
   <div class="calendar-table box">
-    <h1 class="title is-1 has-text-grey-darker">{{planName |planNameFormat}}</h1>
+    <h1 class="has-text-grey-darker">{{planName |planNameFormat}}</h1>
   </div>
 </template>
 
@@ -16,10 +16,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .calendar-table {
-  width: 800px;
-  height: 800px;
   text-align: center;
 }
 </style>

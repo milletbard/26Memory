@@ -6,7 +6,6 @@
       type="primary"
       target="_blank"
     >長期記憶法</el-link>。
-    <br />
     <el-divider></el-divider>
 
     <p>
@@ -39,8 +38,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.calendar-document {
-  margin-left: 10px;
-  min-width: 350px;
-}
 </style>
