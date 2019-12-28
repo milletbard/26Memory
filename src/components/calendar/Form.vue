@@ -9,7 +9,7 @@
       </el-form-item>
       <el-form-item label="開始時間">
         <el-date-picker
-        style="width: 100%;"
+          style="width: 100%;"
           v-model="form.date"
           :picker-options="datePickerOptions"
           type="date"
@@ -48,7 +48,7 @@ export default {
     form: {
       planName: "",
       listName: "",
-      date: moment().format("YYYY-MM-DD"),
+      date: moment(),
       list: null,
       listTotal: null
     },

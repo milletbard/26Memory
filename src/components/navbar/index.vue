@@ -22,8 +22,6 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <button class="button is-link">生成器</button>
-
             <a class="button is-danger">PDF</a>
           </div>
         </div>

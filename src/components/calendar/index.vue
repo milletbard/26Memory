@@ -2,7 +2,7 @@
   <div class="calendar">
     <el-row>
       <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="24">
-        <app-calendar :form="form" />
+        <app-calendar />
       </el-col>
       <el-col :xs="24" :sm="24" :md="24" :lg="10">
         <div class="right-content">
@@ -18,21 +18,19 @@
 import AppCalendar from "./Calendar";
 import CalendarForm from "./Form";
 import CalendarDocument from "./Document";
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
   name: "calendar",
-  data: () => ({
-    form: {}
-  }),
   components: {
     AppCalendar,
     CalendarForm,
     CalendarDocument
   },
-  
+
   methods: {
+    ...mapMutations("calendar", ["ADD_NEW_CALENDAR"]),
     addCalendar(form) {
-      this.form = form;
+      this.ADD_NEW_CALENDAR(form);
     }
   }
 };
