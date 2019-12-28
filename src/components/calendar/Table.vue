@@ -10,7 +10,7 @@ export default {
   props: ["planName"],
   filters: {
     planNameFormat(planName) {
-      return planName ? planName : "背單字26天計畫表";
+      return planName ? planName : "26天背單字計畫表";
     }
   }
 };

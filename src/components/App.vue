@@ -1,6 +1,7 @@
 <template>
-  <div id="app" class="has-background-link">
-    <transition name="el-fade-in-linear" mode="out-in">
+  <div id="app" class>
+    <navbar />
+    <transition name="el-fade-in-linear">
       <calendar />
     </transition>
   </div>
@@ -8,18 +9,18 @@
 
 <script>
 import Calendar from "@/components/calendar";
+import Navbar from "@/components/navbar";
 export default {
   name: "app",
   components: {
-    Calendar
+    Calendar,
+    Navbar
   }
 };
 </script>
 
 <style lang="scss">
 #app {
-  display: flex;
-  justify-content: center;
   height: 100%;
   width: 100%;
 }
@@ -34,11 +35,13 @@ export default {
     -moz-appearance: textfield;
   }
 }
+
 html,
 body {
   margin: 0;
   height: 100%;
 
+  //修正 element date-picker 的文字位置
   .el-picker-panel {
     .el-picker-panel__body-wrapper {
       .el-picker-panel__body {
@@ -55,9 +58,12 @@ body {
     }
   }
 }
+
 .box {
   margin: 24px;
+  border: 0.5px solid gray;
 }
+
 .el-row {
   width: 100%;
   margin-bottom: 20px;
@@ -83,6 +89,5 @@ body {
 }
 .row-bg {
   padding: 10px 0;
-  background-color: #f9fafc;
 }
 </style>
