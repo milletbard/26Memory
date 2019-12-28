@@ -1,11 +1,10 @@
 <template>
   <div>
-    <footer class="footer">
+    <footer class="calendar-footer">
       <div class="content has-text-centered">
         <p>
           Developed with
           <a href="https://github.com/milletbard">milletbard</a>
-          
         </p>
       </div>
     </footer>
@@ -14,7 +13,7 @@
 
 <script>
 export default {
-  name: "footer"
+  name: "calendar-footer"
 };
 </script>
 

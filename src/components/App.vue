@@ -40,6 +40,14 @@ export default {
   input[type="number"] {
     -moz-appearance: textfield;
   }
+
+  .calendar {
+    .el-calendar {
+      .el-calendar__button-group {
+        display: none;
+      }
+    }
+  }
 }
 
 html,

@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar has-background-link" role="navigation" aria-label="main navigation">
+  <nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
         <img src="@/assets/bard-logo-white.png" />
@@ -22,12 +22,8 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <!-- 
-              <a class="button is-link">
-              <strong>生成器</strong>
-            </a>
+            <button class="button is-link">生成器</button>
 
-            -->
             <a class="button is-danger">PDF</a>
           </div>
         </div>

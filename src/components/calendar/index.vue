@@ -2,7 +2,7 @@
   <div class="calendar">
     <el-row>
       <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="24">
-        <calendar-table :planName="planName" />
+        <app-calendar :form="form" />
       </el-col>
       <el-col :xs="24" :sm="24" :md="24" :lg="10">
         <div class="right-content">
@@ -15,24 +15,24 @@
 </template>
 
 <script>
-import calendarTable from "./Table";
-import calendarForm from "./Form";
-import calendarDocument from "./Document";
-
+import AppCalendar from "./Calendar";
+import CalendarForm from "./Form";
+import CalendarDocument from "./Document";
+import { mapState } from "vuex";
 export default {
   name: "calendar",
   data: () => ({
-    planName: ""
+    form: {}
   }),
   components: {
-    calendarTable,
-    calendarForm,
-    calendarDocument
+    AppCalendar,
+    CalendarForm,
+    CalendarDocument
   },
+  
   methods: {
     addCalendar(form) {
-      const { planName } = form;
-      this.planName = planName;
+      this.form = form;
     }
   }
 };
