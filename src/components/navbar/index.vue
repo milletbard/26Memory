@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar has-background-grey" role="navigation" aria-label="main navigation">
+  <nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <router-link to="/">
         <div class="navbar-item">
@@ -23,17 +23,12 @@
       </a>
     </div>
 
-    <div id="navbarBasicExample" :class="`navbar-menu ${burgerClass}`">
+    <div id="navbarBasicExample" :class="`navbar-menu ${burgerClass} has-background-primary	`">
       <div class="navbar-end">
         <div class="navbar-item">
           <router-link to="about">
             <el-link class="has-text-white" :underline="false">About</el-link>
           </router-link>
-        </div>
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-danger">PDF</a>
-          </div>
         </div>
       </div>
     </div>
@@ -62,4 +57,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.navbar-menu{
+  margin-right: 30px;
+}
 </style>
