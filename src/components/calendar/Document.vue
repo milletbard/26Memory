@@ -1,10 +1,14 @@
 <template>
   <div class="calendar-document box">
     可以先看一下這位
-
     <span class="tag is-danger is-light">
-    <a class="has-text-danger" href="https://www.youtube.com/watch?v=zbu9WBAZCZE&loop=0" target="_blank">Youtuber</a>
+      <a
+        class="has-text-danger"
+        href="https://www.youtube.com/watch?v=zbu9WBAZCZE&loop=0"
+        target="_blank"
+      >Youtuber</a>
     </span> 的影片。
+   
     <el-divider></el-divider>
 
     <p>
@@ -20,13 +24,14 @@
     </p>
     <br />
     <p>
-      <el-tag>舉個栗子</el-tag>： 準備三份單字卡（或是任何正在學習的知識，分別做上
+      <el-tag>舉個栗子</el-tag>： 準備三份單字卡，分別做上 list + number 的記號，依照計劃表進行複習。
     </p>
-    <p>list + number 的記號，依照生成出來的計劃表複習。</p>
+
     <p>
       <br />
-      <el-tag>所以這網站可以幹嘛</el-tag>： 可以透過上述的規則來幫助你生成屬於自己的計畫表。
+      <el-tag>所以這網站可以幹嘛</el-tag>： 可以透過上述的規則來幫助你產生屬於自己的計畫表。
     </p>
+     <br />
   </div>
 </template>
 
@@ -37,5 +42,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

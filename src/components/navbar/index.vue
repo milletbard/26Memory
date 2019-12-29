@@ -27,7 +27,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <router-link to="about">
-            <el-link class="has-text-white" :underline="false">About</el-link>
+            <el-link class="has-text-white" :underline="false">關於</el-link>
           </router-link>
         </div>
       </div>
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.navbar-menu{
+.navbar-menu {
   margin-right: 30px;
 }
 </style>

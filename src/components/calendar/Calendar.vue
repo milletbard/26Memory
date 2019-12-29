@@ -3,7 +3,7 @@
     <h1
       class="has-text-grey title is-3 has-text-centered"
     >{{calendarForm.planName | planNameFormat}}</h1>
-    <el-calendar :value="calendarForm.date" id="calendar" :range="getStartRange(calendarForm.date)">
+    <el-calendar :value="calendarForm.date" id="calendar" :range="dateRange">
       <template slot="dateCell" slot-scope="{date, data}">
         <div class="calendar-day">{{ data.day.split('-').slice(1).join('/') }}</div>
         <br />
@@ -22,49 +22,112 @@
 <script>
 import { mapState } from "vuex";
 import moment from "moment";
+import { map, divide, floor, max } from "lodash";
+import uuidv1 from "uuid/v1";
+
 export default {
   name: "app-calendar",
   data: () => ({
-    calendarData: [
-      // test only, remove later
-      { months: ["03"], days: ["04"], things: "coding", id: 54 },
-      { months: ["12"], days: ["26"], things: "coding", id: 55 },
-      { months: ["12"], days: ["26"], things: "coding", id: 10 },
-      { months: ["12"], days: ["26"], things: "coding", id: 64 },
-      { months: ["12"], days: ["27"], things: "coding", id: 20 },
-      { months: ["12"], days: ["27"], things: "coding", id: 21 },
-      { months: ["12"], days: ["27"], things: "coding", id: 22 },
-      { months: ["12"], days: ["28"], things: "coding", id: 80 },
-      { months: ["12"], days: ["28"], things: "coding", id: 11 },
-      { months: ["12"], days: ["28"], things: "coding", id: 12 },
-      { months: ["12"], days: ["29"], things: "coding", id: 1 },
-      { months: ["12"], days: ["29"], things: "coding", id: 2 },
-      { months: ["12"], days: ["29"], things: "coding", id: 3 },
-      { months: ["12"], days: ["29"], things: "coding", id: 7 },
-      { months: ["12"], days: ["29"], things: "coding", id: 6 }
+    calendarData: [],
+    dateRange: [
+      moment().format("YYYY-MM-DD"),
+      moment()
+        .add(1, "month")
+        .format("YYYY-MM-DD")
     ]
   }),
+  watch: {
+    calendarForm: {
+      handler() {
+        this.getMemoryPlan();
+      },
+      deep: true
+    },
+    calendarData: "getDateRange"
+  },
   filters: {
     planNameFormat(planName) {
-      return planName ? planName : "26天背單字計畫表";
+      return planName ? planName : "26天背單字計畫";
     }
   },
   computed: {
     ...mapState("calendar", ["calendarForm"])
   },
   methods: {
-    getStartRange(date) {
-      let dateRange = [
-        moment(date)
-          .subtract(1, "days")
-          .day(1)
-          .format("YYYY-MM-DD"),
-        moment(date)
-          .add(1, "months")
-          .day(7) 
-          .format("YYYY-MM-DD")
-      ];
-      return dateRange;
+    getMemoryPlan() {
+      const { planName, listName, date, list, listTotal } = this.calendarForm;
+
+      const mapCountDays = date => {
+        let count = [1, 1, 2, 6, 8, 15, 26];
+
+        return map(count, item =>
+          moment(date)
+            .add(item, "days")
+            .subtract(1, "day")
+            .format("YYYY-MM-DD")
+        );
+      };
+
+      const mapGetPlan = (countDates, dateCount) => {
+        return map(countDates, date => getPlan(date, dateCount));
+      };
+
+      const getPlan = (date, listNumber) => {
+        let yearFormat = moment(date).format("YYYY");
+        let monthFormat = moment(date).format("MM");
+        let dayFormat = moment(date).format("DD");
+        return {
+          year: yearFormat,
+          months: [monthFormat],
+          days: [dayFormat],
+          things: `${listName} ${listNumber}`,
+          id: uuidv1()
+        };
+      };
+      let dateCount = 1;
+      let calendarData = [];
+
+      for (let listCount = 1; listCount <= listTotal; listCount += list) {
+        let isLastList = listTotal - listCount < list;
+
+        let listNumber =
+          list === 1
+            ? listCount
+            : isLastList
+            ? listTotal - listCount >= 1
+              ? `${listCount} ~ ${listTotal}`
+              : listTotal
+            : `${listCount} ~ ${listCount + list - 1}`;
+        let listDate = moment(date)
+          .add(dateCount - 1, "days")
+          .format("YYYY-MM-DD");
+        calendarData = [
+          ...calendarData,
+          ...mapGetPlan(mapCountDays(listDate), listNumber)
+        ];
+
+        dateCount++;
+      }
+
+      this.calendarData = calendarData;
+    },
+    getDateRange() {
+      const { calendarData } = this;
+
+      let allDate = map(calendarData, item =>
+        moment(`${item.year}-${item.months}-${item.days}`)
+      );
+
+      let minDate = moment
+        .min(...allDate)
+        .isoWeekday(1)
+
+        .format("YYYY-MM-DD");
+      let maxDate = moment
+        .max(...allDate)
+        .isoWeekday(7)
+        .format("YYYY-MM-DD");
+      this.dateRange = [minDate, maxDate];
     }
   }
 };
