@@ -1,5 +1,7 @@
 module.exports = {
   env: {
+    node: true,
+    commonjs: true,
     browser: true,
     es6: true
   },
@@ -15,9 +17,9 @@ module.exports = {
   plugins: ["vue"],
   rules: {
     "no-unused-vars": process.env.NODE_ENV === "production" ? "error" : "off",
-    "no-undef": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    "vue/no-unused-components": process.env.NODE_ENV === "production" ? "error" : "off",
+    "vue/no-unused-components":
+      process.env.NODE_ENV === "production" ? "error" : "off"
   }
 };
