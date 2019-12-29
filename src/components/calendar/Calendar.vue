@@ -1,5 +1,5 @@
 <template>
-  <div class="app-calendar box">
+  <div class="box" id="app-calendar">
     <h1
       class="has-text-grey title is-3 has-text-centered"
     >{{calendarForm.planName | planNameFormat}}</h1>
@@ -138,6 +138,11 @@ export default {
 </script>
 
 <style lang="scss"  >
+
+#app-calendar{
+  padding: 20px;
+}
+
 .calendar {
   .el-calendar {
     .el-calendar__button-group {

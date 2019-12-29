@@ -89,6 +89,7 @@ export default {
 <style lang="scss" >
 #calendar-info {
   margin-bottom: 8px;
+  padding: 20px;
 }
 
 .calendar-info-footer {

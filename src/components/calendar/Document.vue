@@ -1,5 +1,5 @@
 <template>
-  <div class="calendar-document box">
+  <div class="box" id="calendar-document">
     可以先看一下這位
     <span class="tag is-danger is-light">
       <a
@@ -7,8 +7,8 @@
         href="https://www.youtube.com/watch?v=zbu9WBAZCZE&loop=0"
         target="_blank"
       >Youtuber</a>
-    </span> 的影片。
-   
+    </span>
+ 的影片。
     <el-divider></el-divider>
 
     <p>
@@ -31,7 +31,7 @@
       <br />
       <el-tag>所以這網站可以幹嘛</el-tag>： 可以透過上述的規則來幫助你產生屬於自己的計畫表。
     </p>
-     <br />
+    <br />
   </div>
 </template>
 
@@ -42,4 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#calendar-document {
+  padding: 20px;
+}
 </style>

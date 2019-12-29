@@ -2,9 +2,9 @@
   <div>
     <calendar-navbar />
 
-      <transition name="el-fade-in-linear">
-        <router-view></router-view>
-      </transition>
+    <transition name="el-fade-in-linear">
+      <router-view></router-view>
+    </transition>
 
     <calendar-footer />
   </div>
@@ -62,7 +62,6 @@ body {
 
 .box {
   margin: 12px;
-  padding: 0.3rem;
   border: 0.5px solid gray;
 }
 </style>
