@@ -47,7 +47,7 @@ export default {
   },
   filters: {
     planNameFormat(planName) {
-      return planName ? planName : "26天背單字計畫表";
+      return planName ? planName : "26天背單字計畫";
     }
   },
   computed: {

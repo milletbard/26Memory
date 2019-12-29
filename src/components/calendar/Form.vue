@@ -1,6 +1,6 @@
 <template>
   <div class="calendar-info box" id="calendar-info">
-    <el-form ref="form" :model="form" label-width="80px">
+    <el-form ref="form" :model="form" label-width="100px">
       <el-form-item label="計畫名稱">
         <el-input v-model="form.planName" placeholder="想個計畫名稱"></el-input>
       </el-form-item>
@@ -16,7 +16,7 @@
           placeholder="選擇開始時間"
         ></el-date-picker>
       </el-form-item>
-      <el-form-item label="每日List數">
+      <el-form-item label="List / 日">
         <el-input
           type="number"
           placeholder="1"
@@ -56,10 +56,15 @@ export default {
   }),
   methods: {
     submit() {
-      const { form } = this;
-      let dateFormat = moment(form.date).format("YYYY-MM-DD");
+      const { list, listTotal } = this.form;
 
-      this.$emit("add-calendar", { ...form, date: dateFormat });
+      if (list && listTotal) {
+        const { form } = this;
+        let dateFormat = moment(form.date).format("YYYY-MM-DD");
+        this.$emit("add-calendar", { ...form, date: dateFormat });
+      } else {
+        this.$message.error("錯了哦，List 數值不能為 0");
+      }
     },
     reset() {
       this.form = {

@@ -6,45 +6,78 @@
           <p slot="header" class="clearfix title is-5">
             <span>關於本站</span>
           </p>
-          <div class="has-text-grey is-size-6	">
+          <div class="has-text-grey is-size-6">
             <p class="text item">
-              無意間逛
+              無意間看到一位
               <span class="tag is-danger is-light">
                 <a
                   class="has-text-danger"
-                  href="https://www.youtube.com/watch?v=zbu9WBAZCZE&loop=0"
+                  href="https://www.youtube.com/channel/UCWv5gTeR3eEukPgMNBmWJvw"
                   target="_blank"
                 >Youtuber</a>
-              </span> 看到有人分享背單字的方法，才知道原來背東西有技巧的，
-            </p>
-            <p class="text item">
-              也有在網路上找到一些製作計劃書的版本。
+              </span> 分享
               <span class="tag is-link is-light">
-                <a class="has-text-link" href="https://17gre.github.io/17GRE/" target="_blank">附上連結</a>
+                <a
+                  class="has-text-link"
+                  href="https://www.youtube.com/watch?v=zbu9WBAZCZE&loop=0"
+                  target="_blank"
+                >背單字</a>
+              </span>的方法，才知道原來背東西有技巧的， 在網路上找了一下產生計劃書的網站。
+            </p>
+
+            <br />
+            <p class="text item">
+              發現都只找的到簡體字的版本，規則上也略有不同
+              <span class="tag is-link is-light">
+                <a class="has-text-link" href="https://17gre.github.io/17GRE/" target="_blank">附上連結</a>。
               </span>
             </p>
-            <br />
-            <p class="text item">不過都只找的到簡體字的版本，規則上也略有不同，</p>
-            <p class="text item">所以想說乾脆花點時間就做一個繁體版給台灣的學生使用，介面也稍微比較好看一點XD</p>
+            <p class="text item">所以乾脆花點時間做一個繁體版給台灣的學生使用，介面也稍微比較好看一點XD</p>
             <p class="text item"></p>
 
             <p class="text item">希望可以幫助到想背單字的人。</p>
+
             <br />
-            <br />
-            <p class="text item">本網站的計畫表的複習規則為背完單字的第1,2,6,8,15,26天進行複習，</p>
+            <p class="text item">本網站的計畫表的複習規則為背完單字的第 1 , 2 , 6 , 8 , 15, 26 天進行複習。</p>
             <p class="text item">
               也因為複習完一個輪迴的天數是第26天所以就取名為
               <el-tag>26Memory</el-tag>。
             </p>
+            <br />
 
             <p class="text item">如果有什麼建議歡迎寄信告訴我。</p>
+            <br />
+            <h3>版本及更新資訊 :</h3>
+
+            <p class="text item">目前版本 : 1.0.0 版</p>
+
+            <br />
+            <h3>參考資料 :</h3>
+
+            <span class="tag is-link is-light text item">
+              <a class="has-text-link" href="https://17gre.github.io/17GRE/" target="_blank">17GRE</a>
+            </span>
+            <br />
           </div>
         </el-card>
         <br />
-        <el-card class="box-card ">
-          <p slot="header" class="clearfix  title is-5">
+        <el-card class="box-card">
+          <p slot="header" class="clearfix title is-5">
             <span>關於作者</span>
           </p>
+          <div class="has-text-grey is-size-6">
+            <p class="text item">
+              參考
+              <span class="tag is-link is-light text item">
+                <a
+                  class="has-text-link"
+                  href="https://milletbard.github.io/about/"
+                  target="_blank"
+                >個人網站</a>
+              </span>
+            </p>
+            <p class="text item">建議 或 許願功能 : milletbard@gmail.com</p>
+          </div>
         </el-card>
       </el-col>
     </el-row>
