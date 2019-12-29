@@ -84,7 +84,7 @@ export default {
           id: uuidv1()
         };
       };
-      let dateCount = 1;
+      let dateCount = 0;
       let calendarData = [];
 
       for (let listCount = 1; listCount <= listTotal; listCount += list) {
@@ -99,7 +99,7 @@ export default {
               : listTotal
             : `${listCount} ~ ${listCount + list - 1}`;
         let listDate = moment(date)
-          .add(dateCount - 1, "days")
+          .add(dateCount, "days")
           .format("YYYY-MM-DD");
         calendarData = [
           ...calendarData,
