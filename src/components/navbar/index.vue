@@ -1,9 +1,14 @@
 <template>
   <nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <img src="@/assets/bard-logo-white.png" />
-      </a>
+      <router-link to="/">
+        <div class="navbar-item">
+          <a class="navbar-item">
+            <img src="@/assets/bard-logo-white.png" />
+          </a>
+        </div>
+      </router-link>
+
       <a
         @click="toggleBurger"
         role="button"
