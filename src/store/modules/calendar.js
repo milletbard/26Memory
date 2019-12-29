@@ -4,7 +4,6 @@ const state = {
 
 const mutations = {
   ADD_NEW_CALENDAR: (state, form) => {
-    console.table(form);
     state.calendarForm = form;
   }
 };
