@@ -1,5 +1,5 @@
 <template>
-  <div class="calendar-info box">
+  <div class="calendar-info box" id="calendar-info">
     <el-form ref="form" :model="form" label-width="80px">
       <el-form-item label="計畫名稱">
         <el-input v-model="form.planName" placeholder="想個計畫名稱"></el-input>
@@ -82,6 +82,10 @@ export default {
 </script>
 
 <style lang="scss" >
+#calendar-info {
+  margin-bottom: 8px;
+}
+
 .calendar-info-footer {
   float: right;
 }
