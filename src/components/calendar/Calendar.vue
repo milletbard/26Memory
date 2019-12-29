@@ -1,7 +1,7 @@
 <template>
   <div class="app-calendar box">
     <h1
-      class="has-text-grey-darker title is-3 has-text-centered"
+      class="has-text-grey title is-3 has-text-centered"
     >{{calendarForm.planName | planNameFormat}}</h1>
     <el-calendar :value="calendarForm.date" id="calendar" :range="getStartRange(calendarForm.date)">
       <template slot="dateCell" slot-scope="{date, data}">

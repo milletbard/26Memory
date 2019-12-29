@@ -1,11 +1,10 @@
 <template>
   <div class="calendar-document box">
-    可以先看一下這位 youtuber 的分享理解
-    <el-link
-      href="https://www.youtube.com/watch?v=zbu9WBAZCZE&loop=0"
-      type="primary"
-      target="_blank"
-    >長期記憶法</el-link>。
+    可以先看一下這位
+
+    <span class="tag is-danger is-light">
+    <a class="has-text-danger" href="https://www.youtube.com/watch?v=zbu9WBAZCZE&loop=0" target="_blank">Youtuber</a>
+    </span> 的影片。
     <el-divider></el-divider>
 
     <p>
@@ -38,4 +37,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 </style>

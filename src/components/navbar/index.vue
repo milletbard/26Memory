@@ -1,9 +1,14 @@
 <template>
   <nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <img src="@/assets/bard-logo-white.png" />
-      </a>
+      <router-link to="/">
+        <div class="navbar-item">
+          <a class="navbar-item">
+            <img src="@/assets/bard-logo-white.png" />
+          </a>
+        </div>
+      </router-link>
+
       <a
         @click="toggleBurger"
         role="button"
@@ -18,12 +23,12 @@
       </a>
     </div>
 
-    <div id="navbarBasicExample" :class="`navbar-menu ${burgerClass}`">
+    <div id="navbarBasicExample" :class="`navbar-menu ${burgerClass} has-background-primary	`">
       <div class="navbar-end">
         <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-danger">PDF</a>
-          </div>
+          <router-link to="about">
+            <el-link class="has-text-white" :underline="false">About</el-link>
+          </router-link>
         </div>
       </div>
     </div>
@@ -52,4 +57,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.navbar-menu{
+  margin-right: 30px;
+}
 </style>
