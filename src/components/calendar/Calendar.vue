@@ -3,6 +3,7 @@
     <h1
       class="has-text-grey title is-3 has-text-centered"
     >{{calendarForm.planName | planNameFormat}}</h1>
+
     <el-calendar :value="calendarForm.date" id="calendar" :range="dateRange">
       <template slot="dateCell" slot-scope="{date, data}">
         <div class="calendar-day">{{ data.day.split('-').slice(1).join('/') }}</div>
@@ -30,9 +31,12 @@ export default {
   data: () => ({
     calendarData: [],
     dateRange: [
-      moment().format("YYYY-MM-DD"),
+      moment()
+        .day(1)
+        .format("YYYY-MM-DD"),
       moment()
         .add(1, "month")
+        .day(7)
         .format("YYYY-MM-DD")
     ]
   }),
