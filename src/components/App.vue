@@ -3,7 +3,7 @@
     <calendar-navbar />
 
     <transition name="el-fade-in-linear">
-      <calendar />
+      <router-view></router-view>
     </transition>
 
     <calendar-footer />
