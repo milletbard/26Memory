@@ -23,7 +23,7 @@
 <script>
 import { mapState } from "vuex";
 import moment from "moment";
-import { map, divide, floor, max } from "lodash";
+import { map } from "lodash";
 import uuidv1 from "uuid/v1";
 
 export default {
@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     getMemoryPlan() {
-      const { planName, listName, date, list, listTotal } = this.calendarForm;
+      const { listName, date, list, listTotal } = this.calendarForm;
 
       const mapCountDays = date => {
         let count = [1, 1, 2, 6, 8, 15, 26];
@@ -138,8 +138,7 @@ export default {
 </script>
 
 <style lang="scss"  >
-
-#app-calendar{
+#app-calendar {
   padding: 20px;
 }
 
