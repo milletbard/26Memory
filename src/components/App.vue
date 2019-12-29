@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class>
+  <div>
     <calendar-navbar />
 
     <transition name="el-fade-in-linear">
@@ -26,11 +26,6 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  height: 100%;
-  width: 100%;
-}
-
 * {
   // 處理input type = number時的上下箭頭
   input::-webkit-outer-spin-button,
@@ -39,14 +34,6 @@ export default {
   }
   input[type="number"] {
     -moz-appearance: textfield;
-  }
-
-  .calendar {
-    .el-calendar {
-      .el-calendar__button-group {
-        display: none;
-      }
-    }
   }
 }
 
@@ -74,34 +61,8 @@ body {
 }
 
 .box {
-  margin: 24px;
+  margin: 12px;
+  padding: 0.3rem;
   border: 0.5px solid gray;
-}
-
-.el-row {
-  width: 100%;
-  margin-bottom: 20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-.el-col {
-  border-radius: 4px;
-}
-.bg-purple-dark {
-  background: #99a9bf;
-}
-.bg-purple {
-  background: #d3dce6;
-}
-.bg-purple-light {
-  background: #e5e9f2;
-}
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
-}
-.row-bg {
-  padding: 10px 0;
 }
 </style>

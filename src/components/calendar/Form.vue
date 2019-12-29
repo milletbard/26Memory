@@ -28,7 +28,7 @@
         <el-input
           type="number"
           placeholder="7"
-          v-model.trim="form.listTotal"
+          v-model.trim.number="form.listTotal"
           onkeyup="value=value.replace(/[^\d]/g,'')"
         ></el-input>
       </el-form-item>
