@@ -1,10 +1,10 @@
 <template>
   <div class="calendar">
     <el-row>
-      <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="24">
+      <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="14">
         <app-calendar />
       </el-col>
-      <el-col :xs="24" :sm="24" :md="24" :lg="10">
+      <el-col :xs="24" :sm="24" :md="24" :lg="10" :xl="10">
         <div class="right-content">
           <calendar-form @add-calendar="addCalendar" />
           <calendar-document />
@@ -18,7 +18,7 @@
 import AppCalendar from "./Calendar";
 import CalendarForm from "./Form";
 import CalendarDocument from "./Document";
-import { mapState, mapMutations } from "vuex";
+import { mapMutations } from "vuex";
 export default {
   name: "calendar",
   components: {
