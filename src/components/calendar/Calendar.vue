@@ -4,7 +4,13 @@
       class="has-text-grey title is-3 has-text-centered"
     >{{calendarForm.planName | planNameFormat}}</h1>
 
-    <el-calendar :value="calendarForm.date" id="calendar" :range="dateRange">
+    <el-calendar
+      v-for="item in dateRange"
+      :value="calendarForm.date"
+      id="calendar"
+      :key="item.id"
+      :range="item"
+    >
       <template slot="dateCell" slot-scope="{date, data}">
         <div class="calendar-day">{{ data.day.split('-').slice(1).join('/') }}</div>
         <br />
@@ -30,14 +36,17 @@ export default {
   name: "app-calendar",
   data: () => ({
     calendarData: [],
+
     dateRange: [
-      moment()
-        .day(1)
-        .format("YYYY-MM-DD"),
-      moment()
-        .add(1, "month")
-        .day(7)
-        .format("YYYY-MM-DD")
+      [
+        moment()
+          .day(1)
+          .format("YYYY-MM-DD"),
+        moment()
+          .add(3, "weeks")
+          .day(7)
+          .format("YYYY-MM-DD")
+      ]
     ]
   }),
   watch: {
@@ -117,21 +126,32 @@ export default {
     },
     getDateRange() {
       const { calendarData } = this;
+      const format = "YYYY-MM-DD";
 
       let allDate = map(calendarData, item =>
         moment(`${item.year}-${item.months}-${item.days}`)
       );
 
-      let minDate = moment
-        .min(...allDate)
-        .isoWeekday(1)
+      let currentDate = moment.min(...allDate).format(format);
+      let maxDate = moment.max(...allDate).format(format);
 
-        .format("YYYY-MM-DD");
-      let maxDate = moment
-        .max(...allDate)
-        .isoWeekday(7)
-        .format("YYYY-MM-DD");
-      this.dateRange = [minDate, maxDate];
+      let newDateRange = [];
+      while (currentDate <= maxDate) {
+        newDateRange = [
+          ...newDateRange,
+          [
+            moment(currentDate).format(format),
+            moment(currentDate)
+              .add(27, "day")
+              .format(format)
+          ]
+        ];
+        currentDate = moment(currentDate)
+          .add(28, "day")
+          .format(format);
+      }
+
+      this.dateRange = newDateRange;
     }
   }
 };
@@ -151,8 +171,18 @@ export default {
 }
 
 #calendar {
+  .el-calendar__header {
+    display: none;
+  }
   .el-calendar__body {
     padding: 0px;
+    .el-calendar-table {
+      thead {
+        th {
+          text-align: center;
+        }
+      }
+    }
     .el-calendar-table .el-calendar-day {
       padding: 0px;
     }

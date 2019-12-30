@@ -11,14 +11,12 @@
 </template>
 
 <script>
-import Calendar from "@/components/calendar";
 import CalendarNavbar from "@/components/navbar";
 import CalendarFooter from "@/components/footer";
 
 export default {
   name: "app",
   components: {
-    Calendar,
     CalendarNavbar,
     CalendarFooter
   }
