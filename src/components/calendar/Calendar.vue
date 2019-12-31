@@ -135,19 +135,24 @@ export default {
       let currentDate = moment.min(...allDate).format(format);
       let maxDate = moment.max(...allDate).format(format);
 
+      console.log(`current and max date : `, { currentDate, maxDate });
       let newDateRange = [];
       while (currentDate <= maxDate) {
-        newDateRange = [
-          ...newDateRange,
-          [
-            moment(currentDate).format(format),
-            moment(currentDate)
-              .add(27, "day")
-              .format(format)
-          ]
+        let newDate = [
+          moment(currentDate)
+            .day(1)
+            .format(format),
+          moment(currentDate)
+            .add(21, "day")
+            .day(7)
+            .format(format)
         ];
+
+        console.log(`new date : `, newDate);
+        newDateRange = [...newDateRange, newDate];
+
         currentDate = moment(currentDate)
-          .add(28, "day")
+          .add(21, "day")
           .format(format);
       }
 
