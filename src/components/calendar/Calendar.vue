@@ -66,7 +66,7 @@ export default {
     ...mapState("calendar", ["calendarForm"])
   },
   methods: {
-    async getMemoryPlan() {
+    getMemoryPlan() {
       const { listName, date, list, listTotal } = this.calendarForm;
       const dayCount = [1, 1, 2, 6, 8, 15, 26];
       const format = "YYYY-MM-DD";
@@ -122,7 +122,7 @@ export default {
         return calendarData;
       };
 
-      const calendarData = await forListTotal(list, listTotal);
+      const calendarData = forListTotal(list, listTotal);
       this.calendarData = calendarData;
     },
     async getDateRange() {
@@ -163,7 +163,6 @@ export default {
       let maxDate = moment.max(...allDate).format(format);
       let dateRange = await splitDateRange(currentDate, maxDate, 21);
       this.dateRange = dateRange;
-      console.log("!!!!!");
     }
   }
 };
@@ -202,7 +201,7 @@ export default {
       td {
         .el-calendar-day {
           height: 100%;
-          min-height: 100px;
+          min-height: 50px;
           cursor: auto;
 
           div {
