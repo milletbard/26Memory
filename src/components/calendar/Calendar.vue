@@ -36,7 +36,6 @@ export default {
   name: "app-calendar",
   data: () => ({
     calendarData: [],
-
     dateRange: [
       [
         moment()
@@ -67,24 +66,18 @@ export default {
     ...mapState("calendar", ["calendarForm"])
   },
   methods: {
-    getMemoryPlan() {
+    async getMemoryPlan() {
       const { listName, date, list, listTotal } = this.calendarForm;
-
-      const mapCountDays = date => {
-        let count = [1, 1, 2, 6, 8, 15, 26];
-
-        return map(count, item =>
+      const dayCount = [1, 1, 2, 6, 8, 15, 26];
+      const format = "YYYY-MM-DD";
+      const mapDayCount = date => {
+        return map(dayCount, item =>
           moment(date)
             .add(item, "days")
             .subtract(1, "day")
-            .format("YYYY-MM-DD")
+            .format(format)
         );
       };
-
-      const mapGetPlan = (countDates, dateCount) => {
-        return map(countDates, date => getPlan(date, dateCount));
-      };
-
       const getPlan = (date, listNumber) => {
         let yearFormat = moment(date).format("YYYY");
         let monthFormat = moment(date).format("MM");
@@ -97,66 +90,80 @@ export default {
           id: uuidv1()
         };
       };
-      let dateCount = 0;
-      let calendarData = [];
+      const mapPlan = (countDates, dateCount) => {
+        return map(countDates, date => getPlan(date, dateCount));
+      };
 
-      for (let listCount = 1; listCount <= listTotal; listCount += list) {
-        let isLastList = listTotal - listCount < list;
+      const forListTotal = (list, listTotal) => {
+        let dateCount = 0;
+        let calendarData = [];
 
-        let listNumber =
-          list === 1
-            ? listCount
-            : isLastList
-            ? listTotal - listCount >= 1
-              ? `${listCount} ~ ${listTotal}`
-              : listTotal
-            : `${listCount} ~ ${listCount + list - 1}`;
-        let listDate = moment(date)
-          .add(dateCount, "days")
-          .format("YYYY-MM-DD");
-        calendarData = [
-          ...calendarData,
-          ...mapGetPlan(mapCountDays(listDate), listNumber)
-        ];
+        for (let listCount = 1; listCount <= listTotal; listCount += list) {
+          let isLastList = listTotal - listCount < list;
+          let listNumber =
+            list === 1
+              ? listCount
+              : isLastList
+              ? listTotal - listCount >= 1
+                ? `${listCount} ~ ${listTotal}`
+                : listTotal
+              : `${listCount} ~ ${listCount + list - 1}`;
+          let listDate = moment(date)
+            .add(dateCount, "days")
+            .format(format);
+          calendarData = [
+            ...calendarData,
+            ...mapPlan(mapDayCount(listDate), listNumber)
+          ];
 
-        dateCount++;
-      }
+          dateCount++;
+        }
 
+        return calendarData;
+      };
+
+      const calendarData = await forListTotal(list, listTotal);
       this.calendarData = calendarData;
     },
-    getDateRange() {
+    async getDateRange() {
       const { calendarData } = this;
       const format = "YYYY-MM-DD";
 
-      let allDate = map(calendarData, item =>
-        moment(`${item.year}-${item.months}-${item.days}`)
-      );
+      const getAllDate = data => {
+        return map(data, item =>
+          moment(`${item.year}-${item.months}-${item.days}`)
+        );
+      };
+      // console.log(`current and max date : `, { currentDate, maxDate });
+      const splitDateRange = (currentDate, maxDate, days) => {
+        let newDateRange = [];
+        while (currentDate <= maxDate) {
+          let newDate = [
+            moment(currentDate)
+              .day(1)
+              .format(format),
+            moment(currentDate)
+              .add(days, "day")
+              .day(7)
+              .format(format)
+          ];
 
+          // console.log(`new date : `, newDate);
+          newDateRange = [...newDateRange, newDate];
+
+          currentDate = moment(currentDate)
+            .add(days, "day")
+            .format(format);
+        }
+        return newDateRange;
+      };
+
+      let allDate = getAllDate(calendarData);
       let currentDate = moment.min(...allDate).format(format);
       let maxDate = moment.max(...allDate).format(format);
-
-      console.log(`current and max date : `, { currentDate, maxDate });
-      let newDateRange = [];
-      while (currentDate <= maxDate) {
-        let newDate = [
-          moment(currentDate)
-            .day(1)
-            .format(format),
-          moment(currentDate)
-            .add(21, "day")
-            .day(7)
-            .format(format)
-        ];
-
-        console.log(`new date : `, newDate);
-        newDateRange = [...newDateRange, newDate];
-
-        currentDate = moment(currentDate)
-          .add(21, "day")
-          .format(format);
-      }
-
-      this.dateRange = newDateRange;
+      let dateRange = await splitDateRange(currentDate, maxDate, 21);
+      this.dateRange = dateRange;
+      console.log("!!!!!");
     }
   }
 };
