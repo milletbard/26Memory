@@ -34,6 +34,7 @@
       </el-form-item>
     </el-form>
     <div slot="footer" class="calendar-info-footer">
+      <!-- <el-button @click="saveForm" type="primary">儲存</el-button> -->
       <el-button @click="reset">清除</el-button>
       <el-button @click="submit" type="primary">確定</el-button>
     </div>
@@ -41,6 +42,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import moment from "moment";
 export default {
   name: "calendar-info",
@@ -55,6 +57,7 @@ export default {
     datePickerOptions: {}
   }),
   methods: {
+    ...mapActions("calendar", ["setArchives"]),
     submit() {
       const { list, listTotal } = this.form;
 
@@ -74,6 +77,10 @@ export default {
         list: null,
         listTotal: null
       };
+    },
+    saveForm() {
+      const { form } = this;
+      this.setArchives(form);
     }
   },
   created() {

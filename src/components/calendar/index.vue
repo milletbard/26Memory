@@ -1,5 +1,6 @@
 <template>
   <div class="calendar">
+    <calendar-modal :modalOpen="modalOpen" @close-modal="closeModal"></calendar-modal>
     <el-row>
       <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="14">
         <app-calendar />
@@ -18,19 +19,26 @@
 import AppCalendar from "./Calendar";
 import CalendarForm from "./Form";
 import CalendarDocument from "./Document";
-import { mapMutations } from "vuex";
+import CalendarModal from "./Modal";
+import { mapMutations, mapState } from "vuex";
 export default {
   name: "calendar",
   components: {
     AppCalendar,
     CalendarForm,
-    CalendarDocument
+    CalendarDocument,
+    CalendarModal
   },
-
+  computed: {
+    ...mapState("calendar", ["modalOpen"])
+  },
   methods: {
-    ...mapMutations("calendar", ["ADD_NEW_CALENDAR"]),
+    ...mapMutations("calendar", ["ADD_NEW_CALENDAR", "CLOSE_MODAL"]),
     addCalendar(form) {
       this.ADD_NEW_CALENDAR(form);
+    },
+    closeModal() {
+      this.CLOSE_MODAL();
     }
   }
 };
