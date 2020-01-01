@@ -72,7 +72,8 @@ export default {
     },
     saveForm() {
       const { form } = this;
-      setLocalStorage(form);
+      let planName = form.planName ? form.planName : "26天背單字計畫";
+      setLocalStorage({ ...form, planName: planName });
     }
   },
   created() {
