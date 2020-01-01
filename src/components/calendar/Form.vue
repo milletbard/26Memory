@@ -36,7 +36,7 @@
     <div slot="footer" class="calendar-info-footer">
       <el-button @click="saveForm" type="primary">儲存</el-button>
       <el-button @click="reset">清除</el-button>
-      <el-button @click="submit" type="primary">確定</el-button>
+      <el-button @click="updateCalendar" type="primary">確定</el-button>
     </div>
   </div>
 </template>
@@ -44,8 +44,7 @@
 <script>
 import { mapActions } from "vuex";
 import moment from "moment";
-import { setArchives, getArchives, checkArchives } from "@/utils/saveload";
-import uuidv1 from "uuid/v1";
+import { setLocalStorage } from "@/utils/saveload";
 export default {
   name: "calendar-info",
   data: () => ({
@@ -58,15 +57,16 @@ export default {
     },
     datePickerOptions: {}
   }),
+
   methods: {
     ...mapActions("calendar", ["saveCalendarForm"]),
-    submit() {
+    updateCalendar() {
       const { list, listTotal } = this.form;
 
       if (list && listTotal) {
         const { form } = this;
         let dateFormat = moment(form.date).format("YYYY-MM-DD");
-        this.$emit("add-calendar", { ...form, date: dateFormat });
+        this.$emit("update-calendar", { ...form, date: dateFormat });
       } else {
         this.$message.error("錯了哦，List 數值不能為 0");
       }
@@ -82,13 +82,7 @@ export default {
     },
     saveForm() {
       const { form } = this;
-      let archives = { ...form, id: uuidv1() };
-      if (checkArchives()) {
-        let allArchives = getArchives();
-        setArchives([...allArchives, archives]);
-      } else {
-        setArchives([archives]);
-      }
+      setLocalStorage(form);
     }
   },
   created() {

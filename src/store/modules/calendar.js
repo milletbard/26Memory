@@ -4,7 +4,7 @@ const state = {
 };
 
 const mutations = {
-  ADD_NEW_CALENDAR: (state, form) => {
+  UPDATE_CALENDAR: (state, form) => {
     state.calendarForm = form;
   },
   OPEN_MODAL: state => {

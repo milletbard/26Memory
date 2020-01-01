@@ -1,6 +1,7 @@
 import Vuex from "vuex";
 import Vue from "vue";
 import calendar from "./modules/calendar";
+
 Vue.use(Vuex);
 
 const store = new Vuex.Store({

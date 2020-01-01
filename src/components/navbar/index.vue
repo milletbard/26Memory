@@ -30,12 +30,9 @@
             <el-link class="has-text-white is-size-6" :underline="false">about</el-link>
           </router-link>
         </div>
-        <!-- <div class="navbar-item">
-          <button
-            @click="openModal"
-            class="button is-primary is-inverted is-outlined is-small"
-          >載入</button>
-        </div>-->
+        <div class="navbar-item">
+          <button @click="openModal" class="button is-primary is-inverted is-outlined is-small">載入</button>
+        </div>
       </div>
     </div>
   </nav>

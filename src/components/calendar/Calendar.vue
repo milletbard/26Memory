@@ -126,7 +126,7 @@ export default {
       const calendarData = forListTotal(list, listTotal);
       this.calendarData = calendarData;
     },
-    async getDateRange() {
+    getDateRange() {
       const { calendarData } = this;
       const format = "YYYY-MM-DD";
 
@@ -162,7 +162,7 @@ export default {
       let allDate = getAllDate(calendarData);
       let currentDate = moment.min(...allDate).format(format);
       let maxDate = moment.max(...allDate).format(format);
-      let dateRange = await splitDateRange(currentDate, maxDate, 21);
+      let dateRange = splitDateRange(currentDate, maxDate, 21);
       this.dateRange = dateRange;
     }
   }
