@@ -67,12 +67,16 @@ export default {
     },
     deleteCalendar(id) {
       this.$confirm("確定刪除？")
-        .then(() => {
+        .then(async () => {
           const { arcgives } = this;
           const filterArcgives = filter(arcgives, item => item.id != id);
           setArchives(filterArcgives);
 
-          this.updateArchives();
+          await this.updateArchives();
+          this.$message({
+            message: "刪除成功！",
+            type: "success"
+          });
         })
         .catch(() => {});
     }

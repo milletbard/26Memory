@@ -70,10 +70,14 @@ export default {
         listTotal: null
       };
     },
-    saveForm() {
+    async saveForm() {
       const { form } = this;
       let planName = form.planName ? form.planName : "26天背單字計畫";
-      setLocalStorage({ ...form, planName: planName });
+      await setLocalStorage({ ...form, planName: planName });
+      this.$message({
+        message: "儲存成功！",
+        type: "success"
+      });
     }
   },
   created() {
