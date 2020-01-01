@@ -22,7 +22,7 @@
                   href="https://www.youtube.com/watch?v=zbu9WBAZCZE&loop=0"
                   target="_blank"
                 >有效率的達成長期記憶</a>
-              </span> 的方法，就在網路上找了一下產生計劃書的網站發現都只找的到簡體字的版本，規則上也大同小異。
+              </span> 的方法，就在網路上找了一下製作這種計劃表的網站發現都只找的到簡體字的版本，規則上也大同小異。
               <span class="tag is-link is-light">
                 <a class="has-text-link" href="https://17gre.github.io/17GRE/" target="_blank">附上連結</a>。
               </span>
@@ -30,21 +30,42 @@
             <br />
             <p class="text item"></p>
             <p class="text item">由於都沒有找到繁體字的版本，所以乾脆花點時間做一個產生器給台灣的學生使用，介面也稍微比較好看一點XD。</p>
+            <p class="text item">希望可以幫助到正在奮鬥的人。</p>
 
             <br />
             <p class="text item">本網站的計畫表的複習規則為背完單字的第 1 , 2 , 6 , 8 , 15, 26 天進行複習。</p>
             <p class="text item">
               也因為複習完一個輪迴的天數是第26天所以就取名為
-              <el-tag>26Memory</el-tag>，希望可以幫助到想認真的人。
+              <el-tag>26Memory</el-tag>。
             </p>
 
             <br />
 
             <p class="text item">如果有什麼建議歡迎寄信告訴我。</p>
+            <p class="text item">
+              如果覺得不錯又剛好有GitHub帳號的話，可以幫我到
+              <span class="tag is-link is-light">
+                <a
+                  class="has-text-link"
+                  href=" https://github.com/milletbard/26Memory"
+                  target="_blank"
+                >GitHub Repo</a>
+              </span>
+              按顆星星。
+            </p>
             <br />
             <h3>版本及更新資訊 :</h3>
-
             <p class="text item">目前版本 : 1.0.0 版</p>
+            <p>
+              完整資訊參閱
+              <span class="tag is-link is-light">
+                <a
+                  class="has-text-link"
+                  href="https://github.com/milletbard/26Memory/releases/tag/v1.0.0"
+                  target="_blank"
+                >GitHub Releases</a>
+              </span>
+            </p>
 
             <br />
             <h3>參考資料 :</h3>

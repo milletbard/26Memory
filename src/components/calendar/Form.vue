@@ -95,6 +95,9 @@ export default {
 
 <style lang="scss" >
 #calendar-info {
+  .el-button {
+    cursor: pointer;
+  }
   margin-bottom: 8px;
   padding: 20px;
 }

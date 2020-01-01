@@ -78,6 +78,7 @@ export default {
             .format(format)
         );
       };
+
       const getPlan = (date, listNumber) => {
         let yearFormat = moment(date).format("YYYY");
         let monthFormat = moment(date).format("MM");
@@ -105,9 +106,9 @@ export default {
               ? listCount
               : isLastList
               ? listTotal - listCount >= 1
-                ? `${listCount} ~ ${listTotal}`
+                ? `${listCount}~${listTotal}`
                 : listTotal
-              : `${listCount} ~ ${listCount + list - 1}`;
+              : `${listCount}~${listCount + list - 1}`;
           let listDate = moment(date)
             .add(dateCount, "days")
             .format(format);
