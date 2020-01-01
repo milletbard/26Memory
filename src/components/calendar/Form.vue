@@ -17,26 +17,16 @@
         ></el-date-picker>
       </el-form-item>
       <el-form-item label="List / 日">
-        <el-input
-          type="number"
-          placeholder="1"
-          v-model.trim.number="form.list"
-          onkeyup="value=value.replace(/[^\d]/g,'')"
-        ></el-input>
+        <el-input type="number" placeholder="1" v-model.trim.number="form.list"></el-input>
       </el-form-item>
       <el-form-item label="List總數">
-        <el-input
-          type="number"
-          placeholder="7"
-          v-model.trim.number="form.listTotal"
-          onkeyup="value=value.replace(/[^\d]/g,'')"
-        ></el-input>
+        <el-input type="number" placeholder="7" v-model.trim.number="form.listTotal"></el-input>
       </el-form-item>
     </el-form>
     <div slot="footer" class="calendar-info-footer">
-      <el-button @click="saveForm" type="primary">儲存</el-button>
       <el-button @click="reset">清除</el-button>
-      <el-button @click="updateCalendar" type="primary">確定</el-button>
+      <el-button @click="saveForm" type="primary" plain>儲存</el-button>
+      <el-button @click="updateCalendar" type="primary" plain>確定</el-button>
     </div>
   </div>
 </template>

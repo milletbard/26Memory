@@ -26,12 +26,14 @@
     <div id="navbarBasicExample" :class="`navbar-menu ${burgerClass} has-background-primary	`">
       <div class="navbar-end">
         <div class="navbar-item">
-          <router-link to="about">
+          <router-link to="/about">
             <el-link class="has-text-white is-size-6" :underline="false">about</el-link>
           </router-link>
         </div>
         <div class="navbar-item">
-          <button @click="openModal" class="button is-primary is-inverted is-outlined is-small">載入</button>
+          <router-link to="/">
+            <el-link @click="openModal" class="has-text-white is-size-6" :underline="false">載入</el-link>
+          </router-link>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import uuidv1 from "uuid/v1";
 
-const setArchives = form =>
+export const setArchives = form =>
   localStorage.setItem("archives", JSON.stringify(form));
 
 export const removeArchives = () => localStorage.removeItem("archives");
