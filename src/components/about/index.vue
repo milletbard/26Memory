@@ -55,7 +55,7 @@
             </p>
             <br />
             <h3>版本及更新資訊 :</h3>
-            <p class="text item">目前版本 : 1.0.0 版</p>
+            <p class="text item">目前版本 : v1.1.0版</p>
             <p>
               完整資訊參閱
               <span class="tag is-link is-light">
