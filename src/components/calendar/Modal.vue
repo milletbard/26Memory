@@ -18,24 +18,12 @@
             </el-table-column>
             <el-table-column align="center" label="刪除" width="60px">
               <template slot-scope="scope">
-                <el-popover
-                  placement="bottom"
-                  title="確定刪除嗎？"
-                  width="200"
-                  trigger="manual"
-                  v-model="visible"
-                >
-                  <div style="text-align: right; margin: 0">
-                    <el-button size="mini" type="text" @click="visible = false">取消</el-button>
-                    <el-button type="primary" size="mini" @click="deleteCalendar(scope.row.id)">确定</el-button>
-                  </div>
-                  <el-button
-                    slot="reference"
-                    icon="el-icon-delete"
-                    @click="visible = !visible"
-                    circle
-                  ></el-button>
-                </el-popover>
+                <el-button
+                  slot="reference"
+                  icon="el-icon-delete"
+                  @click="deleteCalendar(scope.row.id)"
+                  circle
+                ></el-button>
               </template>
             </el-table-column>
           </el-table>
