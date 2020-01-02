@@ -27,7 +27,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <router-link to="/about">
-            <el-link class="has-text-white is-size-6" :underline="false">about</el-link>
+            <el-link class="has-text-white is-size-6" :underline="false">關於</el-link>
           </router-link>
         </div>
         <div class="navbar-item">
