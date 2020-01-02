@@ -3,7 +3,6 @@
     <el-row>
       <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="14">
         <el-dialog
-          title="載入"
           v-if="modalOpen"
           width="80%"
           :visible.sync="modalOpen"
@@ -19,12 +18,30 @@
             </el-table-column>
             <el-table-column align="center" label="刪除" width="60px">
               <template slot-scope="scope">
-                <el-button icon="el-icon-delete" circle @click="deleteCalendar(scope.row.id)"></el-button>
+                <el-popover
+                  placement="bottom"
+                  title="確定刪除嗎？"
+                  width="200"
+                  trigger="manual"
+                  v-model="visible"
+                >
+                  <div style="text-align: right; margin: 0">
+                    <el-button size="mini" type="text" @click="visible = false">取消</el-button>
+                    <el-button type="primary" size="mini" @click="deleteCalendar(scope.row.id)">确定</el-button>
+                  </div>
+                  <el-button
+                    slot="reference"
+                    icon="el-icon-delete"
+                    @click="visible = !visible"
+                    circle
+                  ></el-button>
+                </el-popover>
               </template>
             </el-table-column>
           </el-table>
+
           <span slot="footer" class="dialog-footer">
-            <el-button type="primary" @click="closeCalendarModal">關 閉</el-button>
+            <el-button @click="closeCalendarModal" type="primary" plain>關 閉</el-button>
           </span>
         </el-dialog>
       </el-col>
@@ -40,7 +57,9 @@ import { setArchives } from "@/utils/saveload";
 export default {
   name: "calendarModal",
   data: () => ({
-    arcgives: []
+    arcgives: [],
+    deleteId: null,
+    visible: false
   }),
   props: {
     modalOpen: { type: Boolean, required: true }
@@ -65,20 +84,18 @@ export default {
       let arcgives = getArchives();
       this.arcgives = arcgives;
     },
-    deleteCalendar(id) {
-      this.$confirm("確定刪除？")
-        .then(async () => {
-          const { arcgives } = this;
-          const filterArcgives = filter(arcgives, item => item.id != id);
-          setArchives(filterArcgives);
+    async deleteCalendar(id) {
+      this.visible = !this.visible;
 
-          await this.updateArchives();
-          this.$message({
-            message: "刪除成功！",
-            type: "success"
-          });
-        })
-        .catch(() => {});
+      const { arcgives } = this;
+      const filterArcgives = filter(arcgives, item => item.id != id);
+      setArchives(filterArcgives);
+      await this.updateArchives();
+      this.$message({
+        message: "刪除成功！",
+        type: "success",
+        center: true
+      });
     }
   },
   created() {

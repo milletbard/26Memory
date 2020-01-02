@@ -70,4 +70,7 @@ export default {
 .navbar-menu {
   margin-right: 30px;
 }
+.navbar-item {
+  text-align: center;
+}
 </style>

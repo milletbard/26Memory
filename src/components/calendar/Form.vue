@@ -76,7 +76,8 @@ export default {
       await setLocalStorage({ ...form, planName: planName });
       this.$message({
         message: "儲存成功！",
-        type: "success"
+        type: "success",
+        center: true
       });
     }
   },
