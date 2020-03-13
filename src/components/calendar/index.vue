@@ -10,10 +10,13 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="14">
         <app-calendar />
       </el-col>
+
       <el-col :xs="24" :sm="24" :md="24" :lg="10" :xl="10">
         <div class="right-content">
           <calendar-form @update-calendar="updateCalendarForm" />
           <calendar-document />
+          <!-- 橫幅廣告 -->
+          <calendar-adsense />
         </div>
       </el-col>
     </el-row>
@@ -25,15 +28,18 @@ import AppCalendar from "./Calendar";
 import CalendarForm from "./Form";
 import CalendarDocument from "./Document";
 import CalendarModal from "./Modal";
+import CalendarAdsense from "./Adsense";
 import { mapMutations, mapState } from "vuex";
 
 export default {
   name: "calendar",
+  data: () => ({ adsbygoogle: "" }),
   components: {
     AppCalendar,
     CalendarForm,
     CalendarDocument,
-    CalendarModal
+    CalendarModal,
+    CalendarAdsense
   },
   computed: {
     ...mapState("calendar", ["modalOpen"])
