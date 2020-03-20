@@ -9,14 +9,16 @@
     <el-row>
       <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="14">
         <app-calendar />
+        <!-- 橫幅廣告 -->
+        <!-- <calendar-adsense /> -->
       </el-col>
 
       <el-col :xs="24" :sm="24" :md="24" :lg="10" :xl="10">
         <div class="right-content">
           <calendar-form @update-calendar="updateCalendarForm" />
           <calendar-document />
-          <!-- 橫幅廣告 -->
-          <calendar-adsense />
+
+          <calendar-books-recommendation />
         </div>
       </el-col>
     </el-row>
@@ -28,7 +30,8 @@ import AppCalendar from "./Calendar";
 import CalendarForm from "./Form";
 import CalendarDocument from "./Document";
 import CalendarModal from "./Modal";
-import CalendarAdsense from "./Adsense";
+// import CalendarAdsense from "./Adsense";
+import CalendarBooksRecommendation from "./BooksRecommendation";
 import { mapMutations, mapState } from "vuex";
 
 export default {
@@ -39,7 +42,8 @@ export default {
     CalendarForm,
     CalendarDocument,
     CalendarModal,
-    CalendarAdsense
+    // CalendarAdsense,
+    CalendarBooksRecommendation
   },
   computed: {
     ...mapState("calendar", ["modalOpen"])

@@ -1,13 +1,15 @@
 <template>
-  <div id="adsense">
-    <!-- <ins
-      class="adsbygoogle"
-      :style="adsstyle"
-      data-ad-client="ca-pub-9294451936713089"
-      data-ad-slot="7639020285"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins>-->
+  <div class="box" id="adsense">
+    <div class="adsense-ins">
+      <ins
+        class="adsbygoogle"
+        :style="adsstyle"
+        data-ad-client="ca-pub-9294451936713089"
+        data-ad-slot="7639020285"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+    </div>
   </div>
 </template>
 
@@ -17,8 +19,8 @@ export default {
   data: () => ({
     adsstyle: {
       display: "block",
-      width: "90%",
-      height: "90%"
+      width: "100%",
+      height: "50%"
     }
   }),
   mounted() {
@@ -29,6 +31,8 @@ export default {
 </script>
 <style lang="scss">
 #adsense {
-  padding: 20px;
+  .adsense-ins {
+    margin: 20px;
+  }
 }
 </style>

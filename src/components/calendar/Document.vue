@@ -68,6 +68,7 @@ export default {
 <style lang="scss" scoped>
 #calendar-document {
   padding: 20px;
+  margin-bottom: 8px;
   .iframe {
     display: flex;
     flex-direction: column;
