@@ -26,6 +26,11 @@
 
     <el-divider></el-divider>
 
+    <h3 class="has-text-centered is-size-7 has-text-grey">每十個點擊就有一隻版主的貓貓獲得罐罐</h3>
+
+    <el-divider></el-divider>
+
+    <br />
     <ins
       class="adsbygoogle"
       style="display:block; text-align:center;"

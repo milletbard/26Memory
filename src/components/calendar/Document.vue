@@ -33,28 +33,28 @@
           <el-tag>所以這網站可以幹嘛</el-tag>： 可以透過上述的規則來幫助你產生屬於自己的計畫表。
         </p>
       </div>
-      <div class="column iframe">
-        <iframe
+      <!-- <div class="column iframe"> -->
+      <!-- <iframe
           style="width:120px;height:240px;"
           marginwidth="0"
           marginheight="0"
           scrolling="no"
           frameborder="0"
           src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=milletbard-20&marketplace=amazon&region=US&placement=B00IJNKZ4Q&asins=B00IJNKZ4Q&linkId=3da6ee84eb29a167fae7ece04348dce4&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff"
-        ></iframe>
-        <h3 class="is-size-7 has-text-grey-light">版主正在透過amazon廣告</h3>
+      ></iframe>-->
+      <!-- <h3 class="is-size-7 has-text-grey-light">版主正在透過amazon廣告</h3>
         <h3 class="is-size-7 has-text-grey-light">賺取主機維護費用</h3>
-        <h3 class="is-size-7 has-text-grey-light">使用者們可以不吝情逛逛</h3>
+      <h3 class="is-size-7 has-text-grey-light">使用者們可以不吝情逛逛</h3>-->
 
-        <!-- <iframe
+      <!-- <iframe
           style="width:120px;height:240px;"
           marginwidth="0"
           marginheight="0"
           scrolling="no"
           frameborder="0"
           src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=milletbard-20&marketplace=amazon&region=US&placement=B004JW1KJA&asins=B004JW1KJA&linkId=a383d6e929e425687e2864d5239001f1&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff"
-        ></iframe>-->
-      </div>
+      ></iframe>-->
+      <!-- </div> -->
     </div>
   </div>
 </template>
