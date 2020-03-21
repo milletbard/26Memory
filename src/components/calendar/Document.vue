@@ -1,7 +1,7 @@
 <template>
   <div class="box" id="calendar-document">
     <div class="columns">
-      <div class="column is-three-quarters">
+      <div class="column">
         可以先看一下這位
         <span class="tag is-danger is-light">
           <a

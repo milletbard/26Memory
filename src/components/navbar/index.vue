@@ -3,7 +3,7 @@
     <div class="column"></div>
     <div class="column" align="center">
       <router-link to="/">
-        <img width="100px" src="@/assets/logo-black.png" />
+        <img width="100px" src="@/assets/logo-white.png" />
       </router-link>
     </div>
     <div class="column" align="right">
