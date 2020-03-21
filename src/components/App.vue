@@ -1,7 +1,7 @@
 <template>
   <div>
     <calendar-navbar />
-
+    <github-corner />
     <transition name="el-fade-in-linear">
       <router-view></router-view>
     </transition>
@@ -12,13 +12,15 @@
 
 <script>
 import CalendarNavbar from "@/components/navbar";
+import GithubCorner from "@/components/GithubCorner";
 import CalendarFooter from "@/components/footer";
 
 export default {
   name: "app",
   components: {
     CalendarNavbar,
-    CalendarFooter
+    CalendarFooter,
+    GithubCorner
   }
 };
 </script>
@@ -61,5 +63,13 @@ body {
 .box {
   margin: 12px;
   border: 0.5px solid gray;
+}
+
+.columns {
+  margin: 0 !important;
+}
+
+.column {
+  padding: 0;
 }
 </style>

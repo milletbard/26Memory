@@ -1,12 +1,24 @@
 <template>
-  <nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
+  <div class="columns is-vcentered is-centered has-background-primary">
+    <div class="column"></div>
+    <div class="column" align="center">
       <router-link to="/">
-        <div class="navbar-item">
-          <a class="navbar-item">
-            <img src="@/assets/bard-logo-white.png" />
-          </a>
-        </div>
+        <img width="100px" src="@/assets/logo-black.png" />
+      </router-link>
+    </div>
+    <div class="column" align="right">
+      <router-link to="/about">
+        <span class="has-text-white is-size-6" :underline="false">關於</span>
+      </router-link>
+      <router-link to="/">
+        <span @click="openModal" class="has-text-white is-size-6" :underline="false">載入</span>
+      </router-link>
+    </div>
+  </div>
+  <!-- <nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <router-link class="navbar-item" to="/">
+        <img src="@/assets/logo-black.png" />
       </router-link>
 
       <a
@@ -37,7 +49,7 @@
         </div>
       </div>
     </div>
-  </nav>
+  </nav>-->
 </template>
 
 <script>
@@ -67,10 +79,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.navbar-menu {
-  margin-right: 30px;
+.columns {
+  height: 60px;
+  display: flex;
+  align-items: center;
 }
-.navbar-item {
-  text-align: center;
+
+span {
+  margin: 10px;
 }
 </style>
