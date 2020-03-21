@@ -70,6 +70,10 @@ export default {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
 }
 .right-content {
   display: flex;

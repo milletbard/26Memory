@@ -8,10 +8,10 @@
     </div>
     <div class="column" align="right">
       <router-link to="/about">
-        <span class="has-text-white is-size-6" :underline="false">關於</span>
+        <span class="has-text-white is-size-7" :underline="false">關於</span>
       </router-link>
       <router-link to="/">
-        <span @click="openModal" class="has-text-white is-size-6" :underline="false">載入</span>
+        <span @click="openModal" class="has-text-white is-size-7" :underline="false">載入</span>
       </router-link>
     </div>
   </div>
@@ -86,6 +86,6 @@ export default {
 }
 
 span {
-  margin: 10px;
+  margin: 5px;
 }
 </style>

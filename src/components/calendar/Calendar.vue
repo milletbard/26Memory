@@ -47,6 +47,7 @@ import { mapState } from "vuex";
 import moment from "moment";
 import { map } from "lodash";
 import uuidv1 from "uuid/v1";
+import Minions from "@/utils/minions";
 
 export default {
   name: "app-calendar",
@@ -141,6 +142,10 @@ export default {
 
       const calendarData = forListTotal(list, listTotal);
       this.calendarData = calendarData;
+
+      this.$nextTick(() => {
+        Minions();
+      });
     },
     getDateRange() {
       const { calendarData } = this;
@@ -191,7 +196,7 @@ export default {
 
 <style lang="scss"  >
 #app-calendar {
-  padding: 20px;
+  padding: 5px;
 }
 
 .calendar {

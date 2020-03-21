@@ -1,11 +1,11 @@
 <template>
-  <div id="books-recommendation" class="box">
+  <div id="books-recommendation" class="box has-text-centered">
     <span class="tag is-danger is-light">
       <a
         class="has-text-danger is-size-7"
         href="https://www.youtube.com/watch?v=Z5lW8YCoL5U&t=6s&loop=0"
         target="_blank"
-      >阿滴英文｜新制多益參考書推薦! 幫你找到最適合你的參考書!（非業配）</a>
+      >阿滴英文｜新制多益參考書推薦!</a>
     </span>
 
     <el-divider></el-divider>

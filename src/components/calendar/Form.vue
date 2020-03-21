@@ -34,7 +34,6 @@
 <script>
 import moment from "moment";
 import Minions from "@/utils/minions";
-import { mapActions, mapState } from "vuex";
 import { setLocalStorage } from "@/utils/saveload";
 export default {
   name: "calendar-info",
