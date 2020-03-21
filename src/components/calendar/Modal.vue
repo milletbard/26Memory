@@ -38,10 +38,9 @@
 </template>
 
 <script>
-import { getArchives } from "@/utils/saveload";
 import moment from "moment";
 import { findIndex, filter } from "lodash";
-import { setArchives } from "@/utils/saveload";
+import { setArchives, getArchives } from "@/utils/saveload";
 export default {
   name: "calendarModal",
   data: () => ({
@@ -63,9 +62,9 @@ export default {
     },
     updateCalendar(id) {
       const { arcgives } = this;
+
       let index = findIndex(arcgives, { id: id });
       let form = arcgives[index];
-
       this.$emit("update-calendar", form);
     },
     updateArchives() {

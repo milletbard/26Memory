@@ -32,8 +32,9 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
 import moment from "moment";
+import Minions from "@/utils/minions";
+import { mapActions, mapState } from "vuex";
 import { setLocalStorage } from "@/utils/saveload";
 export default {
   name: "calendar-info",
@@ -47,20 +48,7 @@ export default {
     },
     datePickerOptions: {}
   }),
-
   methods: {
-    ...mapActions("calendar", ["saveCalendarForm"]),
-    updateCalendar() {
-      const { list, listTotal } = this.form;
-
-      if (list && listTotal) {
-        const { form } = this;
-        let dateFormat = moment(form.date).format("YYYY-MM-DD");
-        this.$emit("update-calendar", { ...form, date: dateFormat });
-      } else {
-        this.$message.error("錯了哦，List 數值不能為 0");
-      }
-    },
     reset() {
       this.form = {
         planName: "",
@@ -79,6 +67,18 @@ export default {
         type: "success",
         center: true
       });
+    },
+    updateCalendar() {
+      const { list, listTotal } = this.form;
+
+      if (list && listTotal) {
+        const { form } = this;
+        let dateFormat = moment(form.date).format("YYYY-MM-DD");
+        this.$emit("update-calendar", { ...form, date: dateFormat });
+        Minions();
+      } else {
+        this.$message.error("錯了哦，List 數值不能為 0");
+      }
     }
   },
   created() {
