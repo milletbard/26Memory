@@ -85,6 +85,9 @@ export default {
   align-items: center;
 }
 
+.column:last-child {
+  margin-right: 10px;
+}
 span {
   margin: 5px;
 }

@@ -23,22 +23,6 @@
         </div>
       </template>
     </el-calendar>
-
-    <el-divider></el-divider>
-
-    <h3 class="has-text-centered is-size-7 has-text-grey">每十個點擊就有一隻版主的貓貓獲得罐罐</h3>
-
-    <el-divider></el-divider>
-
-    <br />
-    <ins
-      class="adsbygoogle"
-      style="display:block; text-align:center;"
-      data-ad-layout="in-article"
-      data-ad-format="fluid"
-      data-ad-client="ca-pub-9294451936713089"
-      data-ad-slot="8212476177"
-    ></ins>
   </div>
 </template>
 
@@ -186,10 +170,6 @@ export default {
       let dateRange = splitDateRange(currentDate, maxDate, 21);
       this.dateRange = dateRange;
     }
-  },
-  mounted() {
-    // eslint-disable-next-line no-undef
-    (adsbygoogle = window.adsbygoogle || []).push({});
   }
 };
 </script>

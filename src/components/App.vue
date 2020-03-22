@@ -41,7 +41,7 @@ html,
 body {
   margin: 0;
   height: 100%;
-
+  padding: 0px !important;
   //修正 element date-picker 的文字位置
   .el-picker-panel {
     .el-picker-panel__body-wrapper {
