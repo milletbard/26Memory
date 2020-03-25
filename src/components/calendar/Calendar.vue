@@ -23,6 +23,18 @@
         </div>
       </template>
     </el-calendar>
+
+    <el-divider></el-divider>
+    <!-- 多媒體廣告預覽 -->
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-9294451936713089"
+      data-ad-slot="5914380239"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+    <el-divider></el-divider>
   </div>
 </template>
 
@@ -170,6 +182,10 @@ export default {
       let dateRange = splitDateRange(currentDate, maxDate, 21);
       this.dateRange = dateRange;
     }
+  },
+  mounted() {
+    // eslint-disable-next-line no-undef
+    (adsbygoogle = window.adsbygoogle || []).push({});
   }
 };
 </script>

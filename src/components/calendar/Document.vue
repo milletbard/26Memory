@@ -2,7 +2,15 @@
   <div class="box" id="calendar-document">
     <div class="columns">
       <div class="column">
-        可以先看一下這位
+        <ins
+          class="adsbygoogle"
+          style="display:block; text-align:center;"
+          data-ad-layout="in-article"
+          data-ad-format="fluid"
+          data-ad-client="ca-pub-9294451936713089"
+          data-ad-slot="8212476177"
+        ></ins>
+        <el-divider></el-divider>可以先看一下這位
         <span class="tag is-danger is-light">
           <a
             class="has-text-danger"
@@ -33,6 +41,7 @@
           <el-tag>所以這網站可以幹嘛</el-tag>： 可以透過上述的規則來幫助你產生屬於自己的計畫表。
         </p>
       </div>
+
       <!-- <div class="column iframe"> -->
       <!-- <iframe
           style="width:120px;height:240px;"
@@ -61,7 +70,11 @@
 
 <script>
 export default {
-  name: "calendar-document"
+  name: "calendar-document",
+  mounted() {
+    // eslint-disable-next-line no-undef
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  }
 };
 </script>
 
