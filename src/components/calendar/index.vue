@@ -6,19 +6,33 @@
       @close-calendar-modal="closeCalendarModal"
       @update-calendar="updateCalendarForm"
     ></calendar-modal>
+
     <el-row>
       <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="14">
+        <ins
+          class="adsbygoogle"
+          style="display:block; margin-top: 8px;"
+          data-ad-client="ca-pub-9294451936713089"
+          data-ad-slot="5914380239"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
         <app-calendar />
-        <!-- 橫幅廣告 -->
-        <!-- <calendar-adsense /> -->
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-9294451936713089"
+          data-ad-slot="5914380239"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
       </el-col>
 
       <el-col :xs="24" :sm="24" :md="24" :lg="10" :xl="10">
         <div class="right-content">
           <calendar-form @update-calendar="updateCalendarForm" />
           <calendar-document />
-
-          <!-- <calendar-books-recommendation /> -->
+          <calendar-books-recommendation />
         </div>
       </el-col>
     </el-row>
@@ -30,8 +44,7 @@ import AppCalendar from "./Calendar";
 import CalendarForm from "./Form";
 import CalendarDocument from "./Document";
 import CalendarModal from "./Modal";
-
-// import CalendarBooksRecommendation from "./BooksRecommendation";
+import CalendarBooksRecommendation from "./BooksRecommendation";
 import { mapMutations, mapState } from "vuex";
 
 export default {
@@ -40,9 +53,9 @@ export default {
   components: {
     AppCalendar,
     CalendarForm,
+    CalendarModal,
     CalendarDocument,
-    CalendarModal
-    // CalendarBooksRecommendation
+    CalendarBooksRecommendation
   },
   computed: {
     ...mapState("calendar", ["modalOpen"])
@@ -59,6 +72,12 @@ export default {
     closeCalendarModal() {
       this.CLOSE_MODAL();
     }
+  },
+  mounted() {
+    // eslint-disable-next-line no-undef
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    // eslint-disable-next-line no-undef
+    (adsbygoogle = window.adsbygoogle || []).push({});
   }
 };
 </script>
