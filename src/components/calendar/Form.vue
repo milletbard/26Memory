@@ -1,7 +1,7 @@
 <template>
   <div class="calendar-info box" id="calendar-info">
-    <h3 class="has-text-centered is-size-7 has-text-grey">賺點貓罐頭的錢~</h3>
-    <el-divider></el-divider>
+    <!-- <h3 class="has-text-centered is-size-7 has-text-grey">賺點貓罐頭的錢~</h3> -->
+    <!-- <el-divider></el-divider>
     <ins
       class="adsbygoogle"
       style="display:block; text-align:center;"
@@ -10,7 +10,7 @@
       data-ad-client="ca-pub-9294451936713089"
       data-ad-slot="8212476177"
     ></ins>
-    <el-divider></el-divider>
+    <el-divider></el-divider>-->
 
     <el-form ref="form" :model="form" label-width="100px">
       <el-form-item label="計畫名稱">

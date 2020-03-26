@@ -24,9 +24,10 @@
       </template>
     </el-calendar>
 
-    <el-divider></el-divider>
+    <!-- <el-divider></!-->
+
     <!-- 多媒體廣告預覽 -->
-    <ins
+    <!-- <ins
       class="adsbygoogle"
       style="display:block"
       data-ad-client="ca-pub-9294451936713089"
@@ -34,7 +35,7 @@
       data-ad-format="auto"
       data-full-width-responsive="true"
     ></ins>
-    <el-divider></el-divider>
+    <el-divider></el-divider>-->
   </div>
 </template>
 

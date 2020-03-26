@@ -2,15 +2,15 @@
   <div class="box" id="calendar-document">
     <div class="columns">
       <div class="column">
-        <ins
+        <!-- <ins
           class="adsbygoogle"
           style="display:block; text-align:center;"
           data-ad-layout="in-article"
           data-ad-format="fluid"
           data-ad-client="ca-pub-9294451936713089"
           data-ad-slot="8212476177"
-        ></ins>
-        <el-divider></el-divider>可以先看一下這位
+        ></ins>-->
+        可以先看一下這位
         <span class="tag is-danger is-light">
           <a
             class="has-text-danger"
@@ -87,6 +87,9 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+  p {
+    font-size: 0.8rem;
   }
 }
 </style>
