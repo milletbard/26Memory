@@ -48,7 +48,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <router-link to="/about">
-            <el-link class="has-text-white is-size-6" :underline="false">關於</el-link>
+            <el-link @click="closeActive" class="has-text-white is-size-6" :underline="false">關於</el-link>
           </router-link>
         </div>
         <div class="navbar-item">
@@ -80,8 +80,12 @@ export default {
       const { burgerActive } = this;
       this.burgerActive = !burgerActive;
     },
+    closeActive() {
+      this.burgerActive = false;
+    },
     openModal() {
       this.OPEN_MODAL();
+      this.closeActive();
     }
   }
 };

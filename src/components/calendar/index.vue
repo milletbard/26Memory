@@ -18,7 +18,7 @@
           <calendar-form @update-calendar="updateCalendarForm" />
           <calendar-document />
 
-          <calendar-books-recommendation />
+          <!-- <calendar-books-recommendation /> -->
         </div>
       </el-col>
     </el-row>
@@ -30,8 +30,8 @@ import AppCalendar from "./Calendar";
 import CalendarForm from "./Form";
 import CalendarDocument from "./Document";
 import CalendarModal from "./Modal";
-// import CalendarAdsense from "./Adsense";
-import CalendarBooksRecommendation from "./BooksRecommendation";
+
+// import CalendarBooksRecommendation from "./BooksRecommendation";
 import { mapMutations, mapState } from "vuex";
 
 export default {
@@ -41,9 +41,8 @@ export default {
     AppCalendar,
     CalendarForm,
     CalendarDocument,
-    CalendarModal,
-    // CalendarAdsense,
-    CalendarBooksRecommendation
+    CalendarModal
+    // CalendarBooksRecommendation
   },
   computed: {
     ...mapState("calendar", ["modalOpen"])

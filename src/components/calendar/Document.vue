@@ -73,7 +73,7 @@ export default {
   name: "calendar-document",
   mounted() {
     // eslint-disable-next-line no-undef
-    (adsbygoogle = window.adsbygoogle || []).push({});
+    // (adsbygoogle = window.adsbygoogle || []).push({});
   }
 };
 </script>
