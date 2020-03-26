@@ -1,5 +1,5 @@
 <template>
-  <div class="columns is-vcentered is-centered has-background-primary">
+  <!-- <div class="columns is-vcentered is-centered has-background-primary">
     <div class="column"></div>
     <div class="column" align="center">
       <router-link to="/">
@@ -8,17 +8,26 @@
     </div>
     <div class="column" align="right">
       <router-link to="/about">
-        <span class="has-text-white is-size-7" :underline="false">關於</span>
+        <span class="has-text-white is-size-6" :underline="false">
+          <i class="el-icon-arrow-down"></i>
+        </span>
       </router-link>
       <router-link to="/">
-        <span @click="openModal" class="has-text-white is-size-7" :underline="false">載入</span>
+        <span @click="openModal" class="has-text-white is-size-6" :underline="false">載入</span>
       </router-link>
     </div>
-  </div>
-  <!-- <nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
+  </div>-->
+  <!-- //////////////////////////////////////////////// -->
+
+  <nav
+    class="navbar has-background-primary"
+    navbar-height="50px"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="navbar-brand">
-      <router-link class="navbar-item" to="/">
-        <img src="@/assets/logo-black.png" />
+      <router-link class="navbar-item logo" to="/">
+        <img src="@/assets/logo-white.png" />
       </router-link>
 
       <a
@@ -49,7 +58,7 @@
         </div>
       </div>
     </div>
-  </nav>-->
+  </nav>
 </template>
 
 <script>
@@ -79,16 +88,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.navbar {
+  min-height: 60px;
+  z-index: 0;
+  .logo {
+    position: absolute;
+    left: 50%;
+    margin-top: 8px;
+    margin-left: -60px;
+  }
+  .navbar-item {
+    text-align: center;
+  }
+}
 .columns {
   height: 60px;
   display: flex;
   align-items: center;
 }
-
 .column:last-child {
   margin-right: 10px;
 }
 span {
   margin: 5px;
+}
+.navbar-link:not(.is-arrowless)::after {
+  // border-color: #fff !important;
 }
 </style>

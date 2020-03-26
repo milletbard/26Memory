@@ -4,7 +4,8 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="14">
         <el-dialog
           v-if="modalOpen"
-          width="80%"
+          top="10vh"
+          width="100%"
           :visible.sync="modalOpen"
           :before-close="closeCalendarModal"
         >
