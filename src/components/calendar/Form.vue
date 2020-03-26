@@ -45,7 +45,6 @@
 
 <script>
 import moment from "moment";
-import Minions from "@/utils/minions";
 import { setLocalStorage } from "@/utils/saveload";
 export default {
   name: "calendar-info",
@@ -86,7 +85,6 @@ export default {
         const { form } = this;
         let dateFormat = moment(form.date).format("YYYY-MM-DD");
         this.$emit("update-calendar", { ...form, date: dateFormat });
-        Minions();
       } else {
         this.$message.error("錯了哦，List 數值不能為 0");
       }
