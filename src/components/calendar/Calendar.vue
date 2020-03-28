@@ -17,7 +17,7 @@
         <div :key="item.id" v-for="item in calendarData">
           <div v-if="(item.months).indexOf(data.day.split('-').slice(1)[0])!=-1">
             <div v-if="(item.days).indexOf(data.day.split('-').slice(2).join('-'))!=-1">
-              <el-tag type="success" size="mini" :hit="true" effect="plain">{{item.things}}</el-tag>
+              <el-tag type="info" size="mini" :hit="true" effect="plain">{{item.things}}</el-tag>
             </div>
           </div>
         </div>

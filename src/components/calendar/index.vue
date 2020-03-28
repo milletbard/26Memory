@@ -17,6 +17,8 @@
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
+        <el-divider></el-divider>
+
         <app-calendar />
       </el-col>
 
@@ -29,7 +31,7 @@
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
-
+        <el-divider></el-divider>
         <calendar-form @update-calendar="updateCalendarForm" />
         <!-- <calendar-document /> -->
       </el-col>

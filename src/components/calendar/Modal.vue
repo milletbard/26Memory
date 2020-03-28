@@ -6,14 +6,6 @@
     :visible.sync="modalOpen"
     :before-close="closeCalendarModal"
   >
-    <ins
-      class="adsbygoogle"
-      style="display:block; margin-top: 16px;"
-      data-ad-client="ca-pub-9294451936713089"
-      data-ad-slot="5914380239"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins>
     <el-table :data="arcgives" height="370" style="width: 100%">
       <el-table-column prop="planName" align="center" label="計劃名稱" min-width="120"></el-table-column>
 
@@ -35,6 +27,14 @@
     </el-table>
 
     <span slot="footer" class="dialog-footer">
+      <ins
+        class="adsbygoogle"
+        style="display:block; margin-top: 16px;"
+        data-ad-client="ca-pub-9294451936713089"
+        data-ad-slot="5914380239"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
       <el-button @click="closeCalendarModal" type="primary" plain>關 閉</el-button>
     </span>
   </el-dialog>

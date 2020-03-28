@@ -34,6 +34,15 @@
             </router-link>
           </div>-->
           <div class="navbar-item">
+            <a href="https://memorystack.milletbard.com" target="_self">
+              <span
+                @click="closeActive"
+                class="has-text-weight-bold has-text-grey is-4 is-size-6-mobile"
+                :underline="false"
+              >教程</span>
+            </a>
+          </div>
+          <div class="navbar-item">
             <router-link to="/">
               <a
                 @click="openModal"

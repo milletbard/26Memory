@@ -27,22 +27,9 @@ export default {
 </script>
 
 <style lang="scss">
-.container-main {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: center;
-}
-
 @font-face {
   font-family: "jf-openhuninn";
   src: url("../assets/fonts/jf-openhuninn-1.0.ttf");
-}
-
-#app {
-  font-family: "jf-openhuninn", Helvetica, Arial, sans-serif !important;
 }
 
 * {
@@ -55,12 +42,37 @@ export default {
     -moz-appearance: textfield;
   }
 }
-
 html {
   height: 100%;
 }
 body {
   height: 100%;
+}
+
+.container-main {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  font-family: "jf-openhuninn", Helvetica, Arial, sans-serif !important;
+}
+
+.layout-main {
+  margin-top: 60px;
+}
+
+.box {
+  margin: 12px;
+}
+
+.columns {
+  margin: 0 !important;
+}
+
+.column {
+  padding: 0;
 }
 
 html,
@@ -84,21 +96,5 @@ body {
       }
     }
   }
-}
-
-.layout-main {
-  margin-top: 60px;
-}
-
-.box {
-  margin: 12px;
-}
-
-.columns {
-  margin: 0 !important;
-}
-
-.column {
-  padding: 0;
 }
 </style>
