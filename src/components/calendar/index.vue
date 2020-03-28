@@ -11,7 +11,7 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="14">
         <ins
           class="adsbygoogle"
-          style="display:block; margin: 16px;"
+          style="display:block; margin-top: 16px;"
           data-ad-client="ca-pub-9294451936713089"
           data-ad-slot="5914380239"
           data-ad-format="auto"
@@ -20,7 +20,7 @@
         <app-calendar />
         <ins
           class="adsbygoogle"
-          style="display:block; margin: 16px;"
+          style="display:block; margin-top: 16px;"
           data-ad-client="ca-pub-9294451936713089"
           data-ad-slot="5914380239"
           data-ad-format="auto"
@@ -32,7 +32,6 @@
         <div class="right-content">
           <calendar-form @update-calendar="updateCalendarForm" />
           <calendar-document />
-          <calendar-books-recommendation />
         </div>
       </el-col>
     </el-row>
@@ -44,7 +43,6 @@ import AppCalendar from "./Calendar";
 import CalendarForm from "./Form";
 import CalendarDocument from "./Document";
 import CalendarModal from "./Modal";
-import CalendarBooksRecommendation from "./BooksRecommendation";
 import { mapMutations, mapState } from "vuex";
 
 export default {
@@ -54,8 +52,7 @@ export default {
     AppCalendar,
     CalendarForm,
     CalendarModal,
-    CalendarDocument,
-    CalendarBooksRecommendation
+    CalendarDocument
   },
   computed: {
     ...mapState("calendar", ["modalOpen"])

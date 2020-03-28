@@ -1,5 +1,5 @@
 <template>
-  <div id="books-recommendation" class="box has-text-centered">
+  <!-- <div id="books-recommendation" class="box has-text-centered">
     <span class="tag is-danger is-light">
       <a
         class="has-text-danger is-size-7"
@@ -28,11 +28,49 @@
         </a>
       </div>
     </div>
+  </div>-->
+  <div class="calendar-modal">
+    <el-row>
+      <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="14">
+        <el-dialog
+          v-if="modalOpen"
+          top="10vh"
+          width="100%"
+          :visible.sync="modalOpen"
+          :before-close="closeCalendarModal"
+        >
+          <el-table :data="arcgives" height="370" style="width: 100%">
+            <el-table-column prop="planName" align="center" label="計劃名稱" min-width="120"></el-table-column>
+
+            <el-table-column align="center" label="載入" width="60px">
+              <template slot-scope="scope">
+                <el-button icon="el-icon-check" circle @click="updateCalendar(scope.row.id)"></el-button>
+              </template>
+            </el-table-column>
+            <el-table-column align="center" label="刪除" width="60px">
+              <template slot-scope="scope">
+                <el-button
+                  slot="reference"
+                  icon="el-icon-delete"
+                  @click="deleteCalendar(scope.row.id)"
+                  circle
+                ></el-button>
+              </template>
+            </el-table-column>
+          </el-table>
+
+          <span slot="footer" class="dialog-footer">
+            <el-button @click="closeCalendarModal" type="primary" plain>關 閉</el-button>
+          </span>
+        </el-dialog>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
 export default {
+  name: "books-recommendation",
   data: () => ({
     booklinks: [
       {
@@ -93,7 +131,9 @@ export default {
       }
     ]
   }),
-  name: "books-recommendation"
+  props: {
+    modalOpen: { type: Boolean, required: true }
+  }
 };
 </script>
 
