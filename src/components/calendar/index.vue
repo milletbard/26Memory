@@ -18,6 +18,9 @@
           data-full-width-responsive="true"
         ></ins>
         <app-calendar />
+      </el-col>
+
+      <el-col :xs="24" :sm="24" :md="24" :lg="10" :xl="10">
         <ins
           class="adsbygoogle"
           style="display:block; margin-top: 16px;"
@@ -26,13 +29,9 @@
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
-      </el-col>
 
-      <el-col :xs="24" :sm="24" :md="24" :lg="10" :xl="10">
-        <div class="right-content">
-          <calendar-form @update-calendar="updateCalendarForm" />
-          <calendar-document />
-        </div>
+        <calendar-form @update-calendar="updateCalendarForm" />
+        <!-- <calendar-document /> -->
       </el-col>
     </el-row>
   </div>
@@ -41,7 +40,7 @@
 <script>
 import AppCalendar from "./Calendar";
 import CalendarForm from "./Form";
-import CalendarDocument from "./Document";
+// import CalendarDocument from "./Document";
 import CalendarModal from "./Modal";
 import { mapMutations, mapState } from "vuex";
 
@@ -51,8 +50,8 @@ export default {
   components: {
     AppCalendar,
     CalendarForm,
-    CalendarModal,
-    CalendarDocument
+    CalendarModal
+    // CalendarDocument
   },
   computed: {
     ...mapState("calendar", ["modalOpen"])

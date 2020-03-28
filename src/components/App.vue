@@ -2,11 +2,12 @@
   <div id="app">
     <calendar-navbar />
     <github-corner />
-    <transition name="el-fade-in-linear">
-      <router-view></router-view>
-    </transition>
-
-    <calendar-footer />
+    <div class="layout-main">
+      <transition name="el-fade-in-linear">
+        <router-view></router-view>
+      </transition>
+      <calendar-footer />
+    </div>
   </div>
 </template>
 
@@ -76,9 +77,12 @@ body {
   }
 }
 
+.layout-main {
+  margin-top: 60px;
+}
+
 .box {
   margin: 12px;
-  border: 0.5px solid gray;
 }
 
 .columns {

@@ -24,7 +24,7 @@
         <div class="navbar-start"></div>
 
         <div class="navbar-end">
-          <div class="navbar-item">
+          <!-- <div class="navbar-item">
             <router-link to="/about">
               <span
                 @click="closeActive"
@@ -32,7 +32,7 @@
                 :underline="false"
               >關於</span>
             </router-link>
-          </div>
+          </div>-->
           <div class="navbar-item">
             <router-link to="/">
               <a

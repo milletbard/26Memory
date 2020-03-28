@@ -1,5 +1,5 @@
 <template>
-  <div class="box" id="app-calendar">
+  <div class="app-calendar box" id="app-calendar">
     <h1
       class="has-text-grey title is-3 has-text-centered"
     >{{calendarForm.planName | planNameFormat}}</h1>
@@ -12,7 +12,7 @@
       :range="item"
     >
       <template slot="dateCell" slot-scope="{date, data}">
-        <div class="calendar-day">{{ data.day.split('-').slice(1).join('/') }}</div>
+        <div class="calendar-day has-text-weight-bold">{{ data.day.split('-').slice(1).join('/') }}</div>
         <br />
         <div :key="item.id" v-for="item in calendarData">
           <div v-if="(item.months).indexOf(data.day.split('-').slice(1)[0])!=-1">
@@ -23,19 +23,6 @@
         </div>
       </template>
     </el-calendar>
-
-    <!-- <el-divider></!-->
-
-    <!-- 多媒體廣告預覽 -->
-    <!-- <ins
-      class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-9294451936713089"
-      data-ad-slot="5914380239"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins>
-    <el-divider></el-divider>-->
   </div>
 </template>
 
@@ -72,7 +59,7 @@ export default {
   },
   filters: {
     planNameFormat(planName) {
-      return planName ? planName : "26天背單字計畫";
+      return planName ? planName : "讀書計畫";
     }
   },
   computed: {
@@ -178,17 +165,13 @@ export default {
       let dateRange = splitDateRange(currentDate, maxDate, 21);
       this.dateRange = dateRange;
     }
-  },
-  mounted() {
-    // eslint-disable-next-line no-undef
-    // (adsbygoogle = window.adsbygoogle || []).push({});
   }
 };
 </script>
 
-<style lang="scss"  >
-#app-calendar {
-  padding: 5px;
+<style lang="scss" >
+.app-calendar {
+  min-height: 400px;
 }
 
 .calendar {
