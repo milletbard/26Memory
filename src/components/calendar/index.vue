@@ -11,7 +11,7 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="14">
         <ins
           class="adsbygoogle"
-          style="display:block; margin-top: 8px;"
+          style="display:block; margin: 16px;"
           data-ad-client="ca-pub-9294451936713089"
           data-ad-slot="5914380239"
           data-ad-format="auto"
@@ -20,7 +20,7 @@
         <app-calendar />
         <ins
           class="adsbygoogle"
-          style="display:block"
+          style="display:block; margin: 16px;"
           data-ad-client="ca-pub-9294451936713089"
           data-ad-slot="5914380239"
           data-ad-format="auto"

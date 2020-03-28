@@ -45,6 +45,13 @@ export default {
   font-family: "jf-openhuninn", Helvetica, Arial, sans-serif !important;
 }
 
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+
 html,
 body {
   margin: 0;
