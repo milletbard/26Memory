@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <calendar-navbar />
     <github-corner />
     <transition name="el-fade-in-linear">
@@ -26,6 +26,10 @@ export default {
 </script>
 
 <style lang="scss">
+@font-face {
+  font-family: "jf-openhuninn";
+  src: url("../assets/jf-openhuninn-1.0.ttf");
+}
 * {
   // 處理input type = number時的上下箭頭
   input::-webkit-outer-spin-button,
@@ -35,6 +39,10 @@ export default {
   input[type="number"] {
     -moz-appearance: textfield;
   }
+}
+
+#app {
+  font-family: "jf-openhuninn", Helvetica, Arial, sans-serif !important;
 }
 
 html,
