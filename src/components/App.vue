@@ -30,6 +30,11 @@ export default {
   font-family: "jf-openhuninn";
   src: url("../assets/jf-openhuninn-1.0.ttf");
 }
+
+#app {
+  font-family: "jf-openhuninn", Helvetica, Arial, sans-serif !important;
+}
+
 * {
   // 處理input type = number時的上下箭頭
   input::-webkit-outer-spin-button,
@@ -39,10 +44,6 @@ export default {
   input[type="number"] {
     -moz-appearance: textfield;
   }
-}
-
-#app {
-  font-family: "jf-openhuninn", Helvetica, Arial, sans-serif !important;
 }
 
 html {
