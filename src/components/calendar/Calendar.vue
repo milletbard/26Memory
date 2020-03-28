@@ -1,5 +1,5 @@
 <template>
-  <div class="app-calendar box" id="app-calendar">
+  <div class="app-calendar box">
     <h1
       class="has-text-grey title is-3 has-text-centered"
     >{{calendarForm.planName | planNameFormat}}</h1>

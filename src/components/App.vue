@@ -29,7 +29,7 @@ export default {
 <style lang="scss">
 @font-face {
   font-family: "jf-openhuninn";
-  src: url("../assets/jf-openhuninn-1.0.ttf");
+  src: url("../assets/fonts/jf-openhuninn-1.0.ttf");
 }
 
 #app {

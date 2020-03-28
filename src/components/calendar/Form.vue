@@ -84,10 +84,6 @@ export default {
         return time.getTime() < Date.now() - 8.64e7;
       }
     };
-  },
-  mounted() {
-    // eslint-disable-next-line no-undef
-    // (adsbygoogle = window.adsbygoogle || []).push({});
   }
 };
 </script>
@@ -97,6 +93,9 @@ export default {
   min-height: 400px;
   .el-button {
     cursor: pointer;
+  }
+  .el-form-item__label {
+    font-weight: bold;
   }
 }
 
