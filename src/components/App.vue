@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="container-main">
     <calendar-navbar />
     <github-corner />
     <div class="layout-main">
@@ -27,6 +27,15 @@ export default {
 </script>
 
 <style lang="scss">
+.container-main {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+}
+
 @font-face {
   font-family: "jf-openhuninn";
   src: url("../assets/fonts/jf-openhuninn-1.0.ttf");
